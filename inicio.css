@@ -2,13 +2,9 @@
     box-sizing: border-box;
 }
 
-.p-1{
-    padding: 0.2em;
-}
-
-.p-2{
-    padding: 1em;
-}
+.p-1{ padding: 0.2em;}
+.p-2{padding: 1em;}
+.p-3{padding: 1.6em;}
 
 .row::after{
     content:"";
@@ -107,5 +103,40 @@
 
 html{
     background-color:  rgba(255, 255, 255, 0.6);
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+#menu li:hover{
+    border-bottom: 0.2em solid yellow;
+}
+
+#menu {
+    padding-left: 0.5em;
+    color: white;
+    display: inline-block;
+}
+
+.flex_container{
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100px;
+    align-items: baseline;
+    /*align-content: stretch;*/
+}
+
+.flex_container div{
+    background-color: cadetblue;
+    font-size: 2em;
+    padding: 0.5em;
+    margin: 0.25em;
+    height: 1.5em;
+
 }
 
