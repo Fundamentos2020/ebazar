@@ -59,6 +59,7 @@
 
 
 .border-b1{border-bottom: 1px solid black;}
+.border-b2{border-bottom: 1px solid lightgray;}
 
 .color-0{background-color: none; color: black;}
 .color-1{background-color: rgba(0, 0, 255, 0.6); color: white;}
@@ -88,6 +89,7 @@
 
 .font-1{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 .font-2{font-family: 'Roboto Condensed', sans-serif;}
+.font-3{font-family: 'Fjalla One', sans-serif;}
 
 .fontz-2{font-size: 1em;}
 
@@ -137,6 +139,8 @@ html{
     padding: 0.5em;
     margin: 0.25em;
     height: 1.5em;
-
 }
 
+.card{
+
+}
