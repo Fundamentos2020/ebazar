@@ -91,6 +91,11 @@
 .font-2{font-family: 'Roboto Condensed', sans-serif;}
 .font-3{font-family: 'Fjalla One', sans-serif;}
 
+.section-title{
+    font-family: 'Fjalla One', sans-serif;
+    padding-left: 0.5em;
+}
+
 .fontz-2{font-size: 1em;}
 
 .height-1{height: 100px;}
@@ -123,24 +128,36 @@ html{
 }
 
 .flex_container{
-    background-color: chartreuse;
+    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100px;
-    align-items: baseline;
+    align-items: flex-start;
     /*align-content: stretch;*/
 }
 
 .flex_container div{
-    background-color: cadetblue;
+    background-color: rgb(224, 224, 224);
     font-size: 2em;
     padding: 0.5em;
     margin: 0.25em;
-    height: 1.5em;
+    height: 4em;
+    width: 4em;
 }
 
-.card{
-
+.card {
+    border: 1px solid lightgray;
+    box-shadow: lightgray 4px;
+    margin-left: 2.2em;
+    padding: 0.5em;
 }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.text-center { text-align: center; }
