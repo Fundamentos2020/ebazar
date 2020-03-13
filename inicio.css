@@ -6,6 +6,8 @@
 .p-2{padding: 1em;}
 .p-3{padding: 1.6em;}
 
+.p-1b{padding-bottom: 0.5em}
+.p-2b{padding-bottom: 1em}
 .row::after{
     content:"";
     clear: both;
@@ -64,7 +66,7 @@
 .color-0{background-color: none; color: black;}
 .color-1{background-color: rgba(0, 0, 255, 0.6); color: white;}
 .color-2{background-color: steelblue; color: white;}
-.color-3{background-color: black; color: white;}
+.color-3{background-color: #0099cc; color: white;}
 .color-4{background-color: white; color: lightgrey}
 .color-5{background-color: white; color: black}
 
@@ -152,6 +154,11 @@ html{
     box-shadow: lightgray 4px;
     margin-left: 2.2em;
     padding: 0.5em;
+}
+
+
+.card:hover{
+    border: 0.2em solid lightgray;
 }
 
 .img-fluid {
