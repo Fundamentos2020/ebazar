@@ -1,0 +1,117 @@
+body {
+    background-color: rgba(0,0,0,.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (min-width: 0px) {
+    .col-s-1 {width: 8.33%}
+    .col-s-2 {width: 16.66%}
+    .col-s-3 {width: 25%}
+    .col-s-4 {width: 33.33%}
+    .col-s-5 {width: 41.66%}
+    .col-s-6 {width: 50%}
+    .col-s-7 {width: 58.33%}
+    .col-s-8 {width: 66.66%}
+    .col-s-9 {width: 75%}
+    .col-s-10 {width: 83.33%}
+    .col-s-11 {width: 91.66%}
+    .col-s-12 {width: 100%}
+}
+
+@media (min-width: 826px) {
+    .col-m-1 {width: 8.33%}
+    .col-m-2 {width: 16.66%}
+    .col-m-3 {width: 25%}
+    .col-m-4 {width: 33.33%}
+    .col-m-5 {width: 41.66%}
+    .col-m-6 {width: 50%}
+    .col-m-7 {width: 58.33%}
+    .col-m-8 {width: 66.66%}
+    .col-m-9 {width: 75%}
+    .col-m-10 {width: 83.33%}
+    .col-m-11 {width: 91.66%}
+    .col-m-12 {width: 100%}
+}
+
+[class*="col-"] {
+    float: left;
+    /*border: 1px solid lightgray;*/
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.p_carrito {
+    padding: 3em 4em;
+}
+
+.contendor_carrito {
+    -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    background-color: white;
+}
+
+.carrito_titulo {
+    padding: 0.5em 1em;
+    font-size: xx-large;
+}
+
+.contendor_productos {
+    padding: 1em;
+}
+
+.compra_producto {
+    display: flex;
+    border-bottom: 1px solid teal;
+    padding: 1em 1em;
+}
+
+
+.compra_titulo {
+    font-size: larger;
+    padding: 1em;
+    width: 30%;
+}
+
+.compra_precio {
+    font-size: x-large;
+    font-weight: bold;
+    height: 100px;
+    padding-top: 50px;
+    padding-right: 2em;
+    text-align: right;
+    width: 100%;
+}
+
+.compra_total {
+    display: flex;
+    padding: 1em;
+    text-align: right;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.compra_subtotal {
+    padding-right: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: x-large;
+}
+
+.compra_texto_total {
+    width: 200px;
+    border-top: 1px solid teal;
+    padding-right: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: x-large;
+    font-weight: bold;
+}
