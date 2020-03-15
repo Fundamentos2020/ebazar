@@ -159,4 +159,40 @@ body {
 	top:1px;
 }
 
+/*Zona de caracterisiticas*/
+.contenedor_caracteristicas {
+    padding: 1em 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.contenedor_caracteristicas div {
+    width: 50%;
+}
+
+/*Zona de comentarios*/
+
+.comment_box {
+    padding: 1em;
+}
+
+.comment_titulo {
+    font-size: medium;
+    padding: 0.5em 0em;
+}
+
+.comment_texto {
+    font-size: medium;
+    color: teal;
+}
+
+.comment_fecha {
+    font-size: medium;
+    text-align: right;
+    float: right;
+    color: teal;
+}
+
         

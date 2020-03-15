@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href="inicio.css">
     <link rel="stylesheet" href="producto.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="row">
+        <div class="col-m-12 col-s-12 p-2 color-3 font-1 ">
+            <h1>eBazar</h1>
+            <div class="col-m-3 col-s-5 color-4" >
+                <input type="text" class="search">                  
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row font-2 fontz-2">
+        <div class="col-m-3 col-s-11 color-2" id = "menu">
+           <ul id="menu">
+               <li >Inicio</li>
+               <li>Productos</li>
+               <li>Vender</li>
+               <li>Mi Cuenta</li>
+           </ul>
+         </div>
+         <div class="col-m-7 col-s-11 color-2 p-3">
+            
+         </div>
+         <div class="col-m-2 col-s-11 color-2 p-3">
+            
+        </div>
+    </div>
+
     <div>
         <div class="row p_producto">
             <div class="col-m-12 col-s-12 contendor_producto">
@@ -36,7 +64,9 @@
                         <a href="#" class="myButton">Comprar</a>
                     </div>
                 </div>
+                <!----Seccion de abajo de la foto con info del producto y comentarios--->
                 <div class="col-m-7 col-s-12 producto_mas">
+                    <!--Acerca del producto-->
                     <div class="c_carctersiticas">
                         <div class="producto_texto producto_titulo">
                             Acerca del producto
@@ -44,16 +74,38 @@
                         <div class="producto_texto producto_descripcion">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum.
                         </div>
-                        <div class="producto_texto producto_caracteristica">
-                            Color: rojo
-                        </div>
-                        <div class="producto_texto producto_caracteristica">
-                            Año: 2017
+
+                        <div class="contenedor_caracteristicas">
+                            <div class="producto_texto producto_caracteristica">
+                                Color: rojo
+                            </div>
+                            <!--class="producto_texto producto_caracteristica"-->
+                            <div class="producto_texto producto_caracteristica">
+                                Año: 2017
+                            </div>
+                            <div class="producto_texto producto_caracteristica">
+                                Modelo: A
+                            </div>
                         </div>
                     </div>
+                    <!--Comentatios de producto-->
                     <div class="c_carctersiticas"></div>
                         <div class="producto_texto producto_titulo">
-                            Comentarios
+                            Preguntas
+                        </div>
+                        <div class="comment_box">
+                            <div class="comment_titulo">
+                                ¿Lorem ipsum dolor sit amet consectetur.?
+                                <span class="comment_fecha">03/03/2020</span>
+                            </div>
+                            <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
+                        </div>
+                        <div class="comment_box">
+                            <div class="comment_titulo">
+                                ¿Lorem ipsum dolor sit amet?
+                                <span class="comment_fecha">03/03/2020</span>
+                            </div>
+                            <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
                         </div>
                     </div>
                 </div>
