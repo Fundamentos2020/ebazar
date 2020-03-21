@@ -5,6 +5,8 @@
 .p-1{ padding: 0.2em;}
 .p-2{padding: 1em;}
 .p-3{padding: 1.6em;}
+.p-4{padding: 2em;}
+.p-5{padding: 2.68em;}
 
 .p-1b{padding-bottom: 0.5em}
 .p-2b{padding-bottom: 1em}
@@ -89,6 +91,7 @@
 .marb-0{margin-bottom: 1em;}
 
 
+
 .font-1{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 .font-2{font-family: 'Roboto Condensed', sans-serif;}
 .font-3{font-family: 'Fjalla One', sans-serif;}
@@ -156,9 +159,18 @@ html{
     padding: 0.5em;
 }
 
-
+.pS{
+    padding-top: 3.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.25em;
+}
 .card:hover{
     border: 0.2em solid lightgray;
+}
+
+.p-Auto{
+    padding: auto;
 }
 
 .img-fluid {
