@@ -135,6 +135,11 @@ body {
     height: auto;
 }
 
+.img_selec {
+    border: solid 5px red;
+    border-radius: 4px;
+}
+
 .producto_texto {
     padding: 0.5em;
 }

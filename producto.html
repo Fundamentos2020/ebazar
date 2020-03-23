@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="producto.js"></script>
     <div class="row">
         <!----Sección del encabezado de la página--->
         <div class="row color-1">
@@ -46,21 +47,18 @@
                 <div class="col-m-7 col-s-12 producto_imagen">
                     <div class="row ">
                         <div class="col-2 ">
-                            <div class="row">
+                            <div class="row" id="imagenes_producto">
                                 <div class="col-12">
-                                    <img class="img_otras" src="uaslp_logo.jpg" alt="">
+                                    <img class="img_otras img_selec" src="uaslp_logo.jpg" alt="" onclick="ClickImgsProducto(this)">
                                 </div>
                                 <div class="col-12">
-                                    <img class="img_otras" src="uaslp_logo.jpg" alt="">
-                                </div>
-                                <div class="col-12">
-                                    <img class="img_otras" src="uaslp_logo.jpg" alt="">
+                                    <img class="img_otras" src="ingenieria_logo.jpg" alt="" onclick="ClickImgsProducto(this)">
                                 </div>
                             </div>
                         </div>
                         <!--https://picsum.photos/300/200-->
                         <div class="caja_imagen">
-                            <img class="img_producto" src="uaslp_logo.jpg" alt="">
+                            <img id="imagen_producto" class="img_producto" src="uaslp_logo.jpg" alt="">
                         </div>
                     </div>
                 </div>
