@@ -22,8 +22,6 @@
     .col-s-10{width: 83.33%;}
     .col-s-11{width: 91.66%;}
     .col-s-12{width: 100%;}
-
-    .fontz-2{font-size: 0.5em;}
 }
 
 @media(min-width: 768px){
@@ -48,15 +46,63 @@
 }
 
 .m-0{margin: 0;}
+.m-1{margin: 0.25em;}
+.m-2{margin: 0.5em;}
 
-.p-1{ padding: 0.2em;}
-.p-2{padding: 1em;}
-.p-3{padding: 1.6em;}
-.p-4{padding: 2em;}
-.p-5{padding: 2.68em;}
+.m-contenedor{
+    margin-left:1em;
+    margin-right: 3em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.p-1{ padding: 0.25em;}
+.p-2{padding: 0.5em;}
+.p-3{padding: 1em;}
+.p-4{padding: 1.25em;}
+.p-5{padding: 1.5em;}
+
+.pt-0{padding-top: 0;}
+.pt-1{padding-top: 0.25em;}
+.pt-2{padding-top: 0.5em;}
 
 .p-1b{padding-bottom: 0.5em}
 .p-2b{padding-bottom: 1em}
+
+.p-c{
+    padding-top: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.bb-1{border-bottom: 1px solid lightgray;}
+
+.border-1{border: 1px solid black;}
+
+
+.text-center{text-align: center;}
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+#foto{
+    background-image: url("https://picsum.photos/200/200");
+    height: 10em;
+    align-items: flex-end;
+}
+
+#foto div{
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex{
+    display: flex;
+}
 
 .menu{
     padding: 0.5em;
@@ -83,4 +129,16 @@
 
 .color-Search{background-color: #0099cc; color: white;}
 
+.color-Contenedor{background-color: #0099cc;}
+.color-Caja{background-color: lightgray;}
+
 .font-Header{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+.font-2{font-family: 'Roboto Condensed', sans-serif;}
+
+
+.contenedor_producto {
+    -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    background-color: white;
+}

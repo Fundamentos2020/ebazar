@@ -2,19 +2,13 @@
     box-sizing: border-box;
 }
 
-.p-1{ padding: 0.2em;}
-.p-2{padding: 1em;}
-.p-3{padding: 1.6em;}
-.p-4{padding: 2em;}
-.p-5{padding: 2.68em;}
 
-.p-1b{padding-bottom: 0.5em}
-.p-2b{padding-bottom: 1em}
 .row::after{
     content:"";
     clear: both;
     display: table;
 }
+
 
 @media(min-width: 0px){
     .col-s-1{width: 8.33%;}
@@ -30,7 +24,6 @@
     .col-s-11{width: 91.66%;}
     .col-s-12{width: 100%;}
 
-    .fontz-2{font-size: 0.5em;}
 }
 
 @media(min-width: 768px){
@@ -57,6 +50,36 @@
 }
 
 
+.p-1{ padding: 0.2em;}
+.p-2{padding: 1em;}
+.p-3{padding: 1.6em;}
+.p-4{padding: 2em;}
+.p-5{padding: 2.68em;}
+
+.p-1b{padding-bottom: 0.5em}
+.p-2b{padding-bottom: 1em}
+
+.p-c{
+    padding-top: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.p-c-1{
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.pS{
+    padding-top: 3.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.25em;
+}
+
 .border-1{border: 1px solid red;}
 .border-2{border: 1px solid blue;}
 .border-3{border: 1px solid chartreuse;}
@@ -66,11 +89,13 @@
 .border-b2{border-bottom: 1px solid lightgray;}
 
 .color-0{background-color: none; color: black;}
-.color-1{background-color: rgba(0, 0, 255, 0.6); color: white;}
+.color-1{background-color: #0099cc; color: white;}
 .color-2{background-color: steelblue; color: white;}
 .color-3{background-color: #0099cc; color: white;}
 .color-4{background-color: white; color: lightgrey}
 .color-5{background-color: white; color: black}
+
+.color-Contenedor{background-color: #0099cc;}
 
 .mar-0{margin: 0em;}
 .mar-1{margin: 1em;}
@@ -89,6 +114,17 @@
 .mar-b-l{ margin-left: 60%;}
 
 .marb-0{margin-bottom: 1em;}
+
+
+.menu{
+    padding: 0.5em;
+    color: white;
+    background-color: steelblue;
+}
+
+.menu:hover{
+    border-bottom: 0.2em solid yellow;
+}
 
 
 
@@ -176,6 +212,13 @@ html{
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+.contenedor_producto {
+    -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    background-color: white;
 }
 
 
