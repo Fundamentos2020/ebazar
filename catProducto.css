@@ -48,6 +48,11 @@
 
 /*Margin zone*/
 .m-0{margin: 0;}
+.m-1{margin: 0.25em;}
+.m-2{margin: 0.5em;}
+.m-3{margin: 0.75em;}
+.m-4{margin: 1em;}
+.m-5{margin: 1.25em;}
 
 
 /*Padding zone*/
@@ -62,6 +67,8 @@
 .pt-1{padding-top: 0.25em;}
 .pt-2{padding-top: 0.5em;}
 
+.pizq-aut-50{padding-left: 50%;}
+
 .pS{
     padding-top: 3.5em;
     padding-right: 1em;
@@ -70,7 +77,7 @@
 }
 
 .p-c{
-    padding-top: 0;
+    padding-top: 0.5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
     padding-bottom: 0.5em;
@@ -78,6 +85,8 @@
 
 /*Bordes*/
 .borde-0{border: 1px solid black;}
+
+.bizq-0{border-left: 1px solid grey;}
 
 /*Fuentes*/
 .font-Header{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
@@ -127,15 +136,36 @@
 }
 
 .align-left{align-content: initial;}
-.align-right{align-content: initial;}
+.align-right{align-content: end;}
 
 /*Zona de Departamentos*/
 #departamentos *{list-style: none;}
 
 /*Zona de Productos*/
-.card {
+.card{
     border: 1px solid lightgray;
     box-shadow: lightgray 4px;
-    margin-left: 2.2em;
+    margin-left: 1.5em;
+    margin-bottom: 0.75em;
     padding: 0.5em;
+}
+
+.card:hover{
+    border: 0.2em solid lightgray;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+/*Botón "Ver producto"*/
+.oferta{
+    background: #4e4bf0;
+    border-color: #3470a8 #31689c #296784;
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    margin-left: 22%;
+    border-radius: 3px;
 }
