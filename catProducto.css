@@ -22,6 +22,15 @@
     .col-s-10{width: 83.33%;}
     .col-s-11{width: 91.66%;}
     .col-s-12{width: 100%;}
+
+    .card{
+        border: 1px solid lightgray;
+        box-shadow: lightgray 4px;
+        margin-left: 1.2em;
+        margin-bottom: 0.75em;
+        padding: 0.5em;
+    }
+    
 }
 
 @media(min-width: 768px){
@@ -38,7 +47,13 @@
     .col-m-11{width: 91.66%;}
     .col-m-12{width: 100%;}
 
-   
+    .card{
+        border: 1px solid lightgray;
+        box-shadow: lightgray 4px;
+        margin-left: 1.9em;
+        margin-bottom: 0.75em;
+        padding: 0.5em;
+    }
 }
 
 [class *= "col-"]{
@@ -87,6 +102,8 @@
 .borde-0{border: 1px solid black;}
 
 .bizq-0{border-left: 1px solid grey;}
+
+.bbottom{border-bottom: 1px solid grey;}
 
 /*Fuentes*/
 .font-Header{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
@@ -141,14 +158,21 @@
 /*Zona de Departamentos*/
 #departamentos *{list-style: none;}
 
-/*Zona de Productos*/
-.card{
-    border: 1px solid lightgray;
-    box-shadow: lightgray 4px;
-    margin-left: 1.5em;
-    margin-bottom: 0.75em;
-    padding: 0.5em;
+#departamentos li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
 }
+
+/*Zona de precios*/
+#precios *{list-style: none;}
+
+#precios li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+/*Zona de Productos*/
+
 
 .card:hover{
     border: 0.2em solid lightgray;
