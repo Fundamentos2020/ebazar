@@ -1,0 +1,195 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.row::after{
+    content:"";
+    clear: both;
+    display: table;
+}
+
+@media(min-width: 0px){
+    .col-s-1{width: 8.33%;}
+    .col-s-2{width: 16.66%;}
+    .col-s-3{width: 25%;}
+    .col-s-4{width: 33.33%;}
+    .col-s-5{width: 41.66%;}
+    .col-s-6{width: 50%;}
+    .col-s-7{width: 58.33%;}
+    .col-s-8{width: 66.66%;}
+    .col-s-9{width: 75%;}
+    .col-s-10{width: 83.33%;}
+    .col-s-11{width: 91.66%;}
+    .col-s-12{width: 100%;}
+
+    .card{
+        border: 1px solid lightgray;
+        box-shadow: lightgray 4px;
+        margin-left: 1.2em;
+        margin-bottom: 0.75em;
+        padding: 0.5em;
+    }
+    
+}
+
+@media(min-width: 768px){
+    .col-m-1{width: 8.33%;}
+    .col-m-2{width: 16.66%;}
+    .col-m-3{width: 25%;}
+    .col-m-4{width: 33.33%;}
+    .col-m-5{width: 41.66%;}
+    .col-m-6{width: 50%;}
+    .col-m-7{width: 58.33%;}
+    .col-m-8{width: 66.66%;}
+    .col-m-9{width: 75%;}
+    .col-m-10{width: 83.33%;}
+    .col-m-11{width: 91.66%;}
+    .col-m-12{width: 100%;}
+
+    .card{
+        border: 1px solid lightgray;
+        box-shadow: lightgray 4px;
+        margin-left: 1.9em;
+        margin-bottom: 0.75em;
+        padding: 0.5em;
+    }
+}
+
+[class *= "col-"]{
+    float: left;
+}
+
+
+/*Margin zone*/
+.m-0{margin: 0;}
+.m-1{margin: 0.25em;}
+.m-2{margin: 0.5em;}
+.m-3{margin: 0.75em;}
+.m-4{margin: 1em;}
+.m-5{margin: 1.25em;}
+
+
+/*Padding zone*/
+.p-0{ padding: 0;}
+.p-1{ padding: 0.25em;}
+.p-2{padding: 0.5em;}
+.p-3{padding: 1em;}
+.p-4{padding: 1.25em;}
+.p-5{padding: 1.5em;}
+
+.pt-0{padding-top: 0;}
+.pt-1{padding-top: 0.25em;}
+.pt-2{padding-top: 0.5em;}
+
+.pizq-aut-50{padding-left: 50%;}
+
+.pS{
+    padding-top: 3.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.25em;
+}
+
+.p-c{
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+/*Bordes*/
+.borde-0{border: 1px solid black;}
+
+.bizq-0{border-left: 1px solid grey;}
+
+.bbottom{border-bottom: 1px solid grey;}
+
+/*Fuentes*/
+.font-Header{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+.font-menu{font-family: 'Roboto Condensed', sans-serif;}
+.font-campos{font-family: 'Poppins', sans-serif;}
+
+/*Tipo de fuente*/
+.text-bold{font-weight: bold;}
+
+/*Background Colors*/
+.color-Banner{background-color: #0099cc;}
+.color-departamento{background-color: grey;}
+
+/*Sección del menú*/
+.menu{
+    padding: 0.5em;
+    color: white;
+    background-color: steelblue;
+}
+
+.menu:hover{
+    border-bottom: 0.1em solid yellow;
+}
+
+/*Text color*/
+.text-white{color: white;}
+
+/*Text Align*/
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+
+
+
+/*Botón de búsqueda*/
+.search{
+    width: 100%;
+    line-height: 20px;
+    direction: ltr;
+}
+
+/*Contenedor del producto (recuadro blanco) */
+.contenedor_producto {
+    -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    background-color: white;
+}
+
+.align-left{align-content: initial;}
+.align-right{align-content: end;}
+
+/*Zona de Departamentos*/
+#departamentos *{list-style: none;}
+
+#departamentos li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+/*Zona de precios*/
+#precios *{list-style: none;}
+
+#precios li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+/*Zona de Productos*/
+
+
+.card:hover{
+    border: 0.2em solid lightgray;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+/*Botón "Ver producto"*/
+.oferta{
+    background: #4e4bf0;
+    border-color: #3470a8 #31689c #296784;
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    margin-left: 22%;
+    border-radius: 3px;
+}
