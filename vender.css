@@ -7,6 +7,19 @@ body {
     box-sizing: border-box;
 }
 
+.col-1 {width: 8.33%}
+    .col-2 {width: 16.66%}
+    .col-3 {width: 25%}
+    .col-4 {width: 33.33%}
+    .col-5 {width: 41.66%}
+    .col-6 {width: 50%}
+    .col-7 {width: 58.33%}
+    .col-8 {width: 66.66%}
+    .col-9 {width: 75%}
+    .col-10 {width: 83.33%}
+    .col-11 {width: 91.66%}
+    .col-12 {width: 100%}
+
 @media (min-width: 0px) {
     .col-s-1 {width: 8.33%}
     .col-s-2 {width: 16.66%}
@@ -48,75 +61,103 @@ body {
     display: table;
 }
 
-.p_carrito {
-    padding: 3em 4em;
+.p_vender {
+    padding: 3em 4vw;
 }
 
-.contendor_carrito {
+.contendor_vender {
     -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
     -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
     box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
     background-color: white;
 }
 
-.carrito_titulo {
+.vender_titulo {
+    text-align: center;
     padding: 0.5em 1em;
+    padding-top: 2em;
     font-size: xx-large;
+    font-weight: bold;
 }
 
-.contendor_productos {
+.contendor_propiedades {
     padding: 1em;
 }
 
-.compra_producto {
-    display: flex;
-    border-bottom: 1px solid teal;
+.propiedad {
+    border-top: 1px solid lightgray;
     padding: 1em 1em;
 }
 
+.sin_linea {
+    border-top: 1px solid white;
+}
 
-.compra_titulo {
+.propiedad_titulo {
     font-size: larger;
     padding: 1em;
-    width: 30%;
 }
 
-.compra_precio {
-    font-size: x-large;
-    font-weight: bold;
-    height: 100px;
-    padding-top: 50px;
-    padding-right: 2em;
-    text-align: right;
-    width: 100%;
-}
-
-.compra_total {
-    display: flex;
+.caracteristica_titulo {
+    font-size: larger;
+    text-align: center;
     padding: 1em;
+}
+
+.caracteristica_mas {
+    padding: 0.5em;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.caracteristica_mas:hover {
+    background-color: lightgray;
+}
+
+.input_caractersitica {
+    text-align: center;
+    width: 100%;
+    padding: 1em 1em;
+}
+
+.contenedor_input {
+    padding: 0.5em 1em;
+}
+
+.input_nombre {
+    width: 80%;
+    padding: 1em 1em;
+}
+
+.input_precio {
+    padding: 0.5em 1em;
+    width: 50%;
     text-align: right;
-    flex-direction: column;
-    align-items: flex-end;
+    font-size: large;
 }
 
-.compra_subtotal {
-    padding-right: 1.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    font-size: x-large;
+#mainImg {
+    padding: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
 }
 
-.compra_texto_total {
-    width: 200px;
-    border-top: 1px solid teal;
-    padding-right: 1.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    font-size: x-large;
-    font-weight: bold;
+.mas_img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#b_comprar {
+.img_p {
+    padding: 1em;
+}
+
+
+#b_vender {
     padding: 1em;
     text-align: center;
 }
