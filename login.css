@@ -1,0 +1,12 @@
+.m-b{
+    margin-top: 1em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.botonRedondo{
+    padding: 0.5em 0.5em;
+    border-radius: 18px;
+}
+.float-r{float: right;}

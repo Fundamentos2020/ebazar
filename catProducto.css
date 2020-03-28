@@ -23,6 +23,10 @@
     .col-s-11{width: 91.66%;}
     .col-s-12{width: 100%;}
 
+    .m-contenedor{
+        margin: 0;
+    }
+
     .card{
         border: 1px solid lightgray;
         box-shadow: lightgray 4px;
@@ -30,6 +34,8 @@
         margin-bottom: 0.75em;
         padding: 0.5em;
     }
+
+    .h{height: auto;}
     
 }
 
@@ -54,6 +60,12 @@
         margin-bottom: 0.75em;
         padding: 0.5em;
     }
+
+    .m-contenedor{
+        margin: 10% 33.3%;
+    }
+
+    .h{height: 30em;}
 }
 
 [class *= "col-"]{
@@ -68,6 +80,13 @@
 .m-3{margin: 0.75em;}
 .m-4{margin: 1em;}
 .m-5{margin: 1.25em;}
+
+.mb-0{margin-bottom: 0;}
+.mb-1{margin-bottom: 0.25em;}
+.mb-2{margin-bottom: 0.5em;}
+.mb-3{margin-bottom: 0.75em;}
+.mb-4{margin-bottom: 1em;}
+
 
 
 /*Padding zone*/
@@ -116,6 +135,7 @@
 /*Background Colors*/
 .color-Banner{background-color: #0099cc;}
 .color-departamento{background-color: grey;}
+.color-blancoF{background-color: whitesmoke;}
 
 /*Sección del menú*/
 .menu{
@@ -134,6 +154,7 @@
 /*Text Align*/
 .text-center{text-align: center;}
 .text-left{text-align: left;}
+
 
 
 
