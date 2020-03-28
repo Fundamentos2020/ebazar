@@ -133,6 +133,47 @@
     direction: ltr;
 }
 
+
+.search2 {
+    border: 0px;
+    border-right: 2px solid lightgray;
+    width: 100%;
+    line-height: 25px;
+}
+
+.contendor_search {
+    padding-top: 2px;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    padding-bottom: 1em;
+
+    border-radius: 5px;
+    background-color: white;
+    height: 32px;
+}
+
+.search_icon {
+    padding-top: 0em;
+    padding-left: 1vw;
+    padding-right: 2vw;
+    background-color: white;
+}
+
+.search_icon:hover {
+    background-color: lightgray;
+}
+
+.img_search {
+    width: auto;
+    max-height: 22px;
+}
+
+
+.e-titulo {
+    padding-left: 3em;
+}
+
+
 .color-Search{background-color: #0099cc; color: white;}
 .color-Contenedor{background-color: #0099cc;}
 .color-Caja{background-color: lightgray;}
