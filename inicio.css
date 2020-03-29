@@ -126,7 +126,9 @@
     border-bottom: 0.2em solid yellow;
 }
 
-
+h1 {
+    color: white;
+}
 
 .font-1{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 .font-2{font-family: 'Roboto Condensed', sans-serif;}

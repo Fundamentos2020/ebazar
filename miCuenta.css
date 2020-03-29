@@ -133,6 +133,9 @@
     direction: ltr;
 }
 
+h1 {
+    color: white;
+}
 
 .search2 {
     border: 0px;
