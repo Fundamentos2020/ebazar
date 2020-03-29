@@ -95,6 +95,7 @@ body {
 
 .propiedad_titulo {
     font-size: larger;
+    font-weight: bold;
     padding: 1em;
 }
 
