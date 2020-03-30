@@ -20,6 +20,16 @@ body {
     .col-s-10 {width: 83.33%}
     .col-s-11 {width: 91.66%}
     .col-s-12 {width: 100%}
+
+    .compra_precio {
+        font-size: large;
+        font-weight: bold;
+        height: 100px;
+        padding-top: 50px;
+        padding-right: 2em;
+        text-align: right;
+        width: 100%;
+    }
 }
 
 @media (min-width: 826px) {
@@ -35,6 +45,16 @@ body {
     .col-m-10 {width: 83.33%}
     .col-m-11 {width: 91.66%}
     .col-m-12 {width: 100%}
+
+    .compra_precio {
+        font-size: x-large;
+        font-weight: bold;
+        height: 100px;
+        padding-top: 50px;
+        padding-right: 2em;
+        text-align: right;
+        width: 100%;
+    }
 }
 
 [class*="col-"] {
@@ -79,16 +99,6 @@ body {
     font-size: larger;
     padding: 1em;
     width: 30%;
-}
-
-.compra_precio {
-    font-size: x-large;
-    font-weight: bold;
-    height: 100px;
-    padding-top: 50px;
-    padding-right: 2em;
-    text-align: right;
-    width: 100%;
 }
 
 .compra_total {
