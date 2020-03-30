@@ -33,6 +33,18 @@ body {
     .col-s-10 {width: 83.33%}
     .col-s-11 {width: 91.66%}
     .col-s-12 {width: 100%}
+
+    .caracteristica_titulo {
+        font-size: small;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .propiedad_titulo {
+        font-size: medium;
+        font-weight: bold;
+        padding: 0em;
+    }
 }
 
 @media (min-width: 826px) {
@@ -48,6 +60,18 @@ body {
     .col-m-10 {width: 83.33%}
     .col-m-11 {width: 91.66%}
     .col-m-12 {width: 100%}
+
+    .caracteristica_titulo {
+        font-size: larger;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .propiedad_titulo {
+        font-size: larger;
+        font-weight: bold;
+        padding: 0em;
+    }
 }
 
 [class*="col-"] {
@@ -62,7 +86,7 @@ body {
 }
 
 .p_vender {
-    padding: 3em 4vw;
+    padding: 1em 3vw;
 }
 
 .contendor_vender {
@@ -76,7 +100,7 @@ body {
     text-align: center;
     padding: 0.5em 1em;
     padding-top: 2em;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
 }
 
@@ -93,18 +117,6 @@ body {
     border-top: 1px solid white;
 }
 
-.propiedad_titulo {
-    font-size: larger;
-    font-weight: bold;
-    padding: 1em;
-}
-
-.caracteristica_titulo {
-    font-size: larger;
-    text-align: center;
-    padding: 1em;
-}
-
 .caracteristica_mas {
     padding: 0.5em;
     text-align: center;
@@ -119,11 +131,11 @@ body {
 .input_caractersitica {
     text-align: center;
     width: 100%;
-    padding: 1em 1em;
+    padding: 1em 1vw;
 }
 
 .contenedor_input {
-    padding: 0.5em 1em;
+    padding: 0.5em 0em;
 }
 
 .input_nombre {

@@ -34,6 +34,28 @@ body {
     .col-s-10 {width: 83.33%}
     .col-s-11 {width: 91.66%}
     .col-s-12 {width: 100%}
+
+    .producto_contendor {
+        border-top: 1px solid lightgray;
+        padding: 2em 1vw;
+    }
+
+    .texto_titulo {
+        padding: 0.5em 1em;
+        font-size: large;
+    }
+
+    .texto_precio {
+        padding: 0.5em 1em;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .texto_caracterisitica {
+        padding: 0.5em 1em;
+        font-size: medium;
+        color: teal;
+    }
 }
 
 @media (min-width: 826px) {
@@ -49,16 +71,33 @@ body {
     .col-m-10 {width: 83.33%}
     .col-m-11 {width: 91.66%}
     .col-m-12 {width: 100%}
+
+    .producto_contendor {
+        border-top: 1px solid lightgray;
+        padding: 2em 5vw;
+    }
+
+    .texto_titulo {
+        padding: 0.5em 1em;
+        font-size: x-large;
+    }
+
+    .texto_precio {
+        padding: 0.5em 1em;
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    .texto_caracterisitica {
+        padding: 0.5em 1em;
+        font-size: large;
+        color: teal;
+    }
 }
 
 [class*="col-"] {
     float: left;
     /*border: 1px solid lightgray;*/
-}
-
-.producto_contendor {
-    border-top: 1px solid lightgray;
-    padding: 2em 5vw;
 }
 
 .cabeza_resultados {
@@ -70,29 +109,12 @@ body {
     height: auto;
 }
 
-.texto_titulo {
-    padding: 0.5em 1em;
-    font-size: x-large;
-}
-
-.texto_precio {
-    padding: 0.5em 1em;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-.texto_caracterisitica {
-    padding: 0.5em 1em;
-    font-size: large;
-    color: teal;
-}
-
 .texto_resutlados {
     font-size: large;
 }
 
 .mas_paginas {
-    padding: 3em;
+    padding: 3vw;
     display: flex;
     justify-content: center;
     align-items: center;

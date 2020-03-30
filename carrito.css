@@ -21,14 +21,41 @@ body {
     .col-s-11 {width: 91.66%}
     .col-s-12 {width: 100%}
 
+    .compra_titulo {
+        font-size: medium;
+        padding: 1em;
+        width: 30%;
+    }
+
     .compra_precio {
-        font-size: large;
+        font-size: medium;
         font-weight: bold;
         height: 100px;
         padding-top: 50px;
         padding-right: 2em;
         text-align: right;
         width: 100%;
+    }
+
+    .p_carrito {
+        padding: 1em 2vw;
+    }
+
+    .compra_subtotal {
+        padding-right: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: large;
+    }
+
+    .compra_texto_total {
+        width: 200px;
+        border-top: 1px solid teal;
+        padding-right: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: large;
+        font-weight: bold;
     }
 }
 
@@ -46,14 +73,41 @@ body {
     .col-m-11 {width: 91.66%}
     .col-m-12 {width: 100%}
 
+    .compra_titulo {
+        font-size: larger;
+        padding: 1em;
+        width: 30%;
+    }
+
     .compra_precio {
-        font-size: x-large;
+        font-size: large;
         font-weight: bold;
         height: 100px;
         padding-top: 50px;
         padding-right: 2em;
         text-align: right;
         width: 100%;
+    }
+
+    .p_carrito {
+        padding: 1em 3vw;
+    }
+
+    .compra_subtotal {
+        padding-right: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: x-large;
+    }
+
+    .compra_texto_total {
+        width: 200px;
+        border-top: 1px solid teal;
+        padding-right: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: x-large;
+        font-weight: bold;
     }
 }
 
@@ -68,9 +122,6 @@ body {
     display: table;
 }
 
-.p_carrito {
-    padding: 3em 3vw;
-}
 
 .contendor_carrito {
     -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
@@ -85,20 +136,13 @@ body {
 }
 
 .contendor_productos {
-    padding: 1em;
+    padding: 1vw;
 }
 
 .compra_producto {
     display: flex;
     border-bottom: 1px solid teal;
-    padding: 1em 1em;
-}
-
-
-.compra_titulo {
-    font-size: larger;
-    padding: 1em;
-    width: 30%;
+    padding: 1em 1vw;
 }
 
 .compra_total {
@@ -107,23 +151,6 @@ body {
     text-align: right;
     flex-direction: column;
     align-items: flex-end;
-}
-
-.compra_subtotal {
-    padding-right: 1.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    font-size: x-large;
-}
-
-.compra_texto_total {
-    width: 200px;
-    border-top: 1px solid teal;
-    padding-right: 1.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    font-size: x-large;
-    font-weight: bold;
 }
 
 #b_comprar {
