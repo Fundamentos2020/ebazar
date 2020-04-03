@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href="inicio.css">
-    <link rel="stylesheet" href="vender.css">
-    <title>Vender</title>
+    <link rel="stylesheet" href="editarProducto.css">
+    <title>Editar producto</title>
 </head>
 <body>
     <script>
@@ -77,7 +77,7 @@
 
     <div class="row p_vender">
         <div class="col-m-12 col-s-12 contendor_vender">
-            <div class="vender_titulo">Vende tus productos!</div>
+            <div class="vender_titulo">Editar producto</div>
 
             <!--Contendor de propiedades-->
             <form class="contendor_propiedades">
@@ -86,7 +86,7 @@
                         Nombre de producto
                     </div>
                     <div class="contenedor_input">
-                        <input type="text" class="input_nombre" placeholder="Ej. Monitor gamer">
+                        <input value="Lorem ipsum dolor sit amet." type="text" class="input_nombre" placeholder="Ej. Monitor gamer">
                     </div>
                 </div>
 
@@ -95,7 +95,8 @@
                         Descripción basica
                     </div>
                     <div class="contenedor_input">
-                        <input type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
+                        <input value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis." 
+                        type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
                     </div>
                 </div>
 
@@ -104,7 +105,8 @@
                         Descripción completa
                     </div>
                     <div class="contenedor_input">
-                        <input type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
+                        <input value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum." 
+                        type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
                     </div>
                 </div>
 
@@ -113,7 +115,8 @@
                         Ubicación
                     </div>
                     <div class="contenedor_input">
-                        <input type="text" class="input_nombre" placeholder="Ej. San Luis Potosi">
+                        <input value="San Luis Potosi"
+                        type="text" class="input_nombre" placeholder="Ej. San Luis Potosi">
                     </div>
                 </div>
 
@@ -122,7 +125,7 @@
                         Precio
                     </div>
                     <div class="contenedor_input">
-                        <input type="text" class="input_precio" placeholder="100">
+                        <input value="540" type="text" class="input_precio" placeholder="100">
                         <span>MXN</span>
                     </div>
                 </div>
@@ -135,7 +138,7 @@
                         <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)">
                         <br>
                         <div class="mas_img">
-                            <img id="mainImg" src="noimg.png" alt="">
+                            <img id="mainImg" src="https://picsum.photos/200/200" alt="">
 
                         </div>
                     </div>
@@ -151,13 +154,13 @@
                         <br>
                         <div class="mas_img">
                             <div class="img_p">
-                                <img src="noimg.png" alt="">
+                                <img src="https://picsum.photos/200/200" alt="">
                             </div>
                             <div class="img_p">
-                                <img src="noimg.png" alt="">
+                                <img src="https://picsum.photos/200/200" alt="">
                             </div>
                             <div class="img_p">
-                                <img src="noimg.png" alt="">
+                                <img src="https://picsum.photos/200/200" alt="">
                             </div>
                         </div>
                     </div>
@@ -177,11 +180,25 @@
 
                         <div id="caracteristicas">
                             <div class="col-6">
-                                <input type="text" class="input_caractersitica" placeholder="Ej. Color">
+                                <input value="Color"
+                                type="text" class="input_caractersitica" placeholder="Ej. Color">
 
                             </div>
                             <div class="col-6">
-                                <input type="text" class="input_caractersitica" placeholder="Ej. Rojo">
+                                <input value="Rojo"
+                                type="text" class="input_caractersitica" placeholder="Ej. Rojo">
+                            </div>
+                        </div>
+
+                        <div id="caracteristicas">
+                            <div class="col-6">
+                                <input value="Año2"
+                                type="text" class="input_caractersitica" placeholder="Ej. Color">
+
+                            </div>
+                            <div class="col-6">
+                                <input value="2015"
+                                type="text" class="input_caractersitica" placeholder="Ej. Rojo">
                             </div>
                         </div>
 
@@ -196,7 +213,7 @@
                 </div>
 
                 <div id="b_vender">
-                    <a href="#" class="myButton">Publicar producto</a>
+                    <a href="#" class="myButton">Guardar cambios</a>
                 </div>
 
             </div>

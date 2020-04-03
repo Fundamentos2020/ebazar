@@ -1,0 +1,197 @@
+body {
+    background-color: rgba(0,0,0,.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 8.33%}
+    .col-2 {width: 16.66%}
+    .col-3 {width: 25%}
+    .col-4 {width: 33.33%}
+    .col-5 {width: 41.66%}
+    .col-6 {width: 50%}
+    .col-7 {width: 58.33%}
+    .col-8 {width: 66.66%}
+    .col-9 {width: 75%}
+    .col-10 {width: 83.33%}
+    .col-11 {width: 91.66%}
+    .col-12 {width: 100%}
+
+@media (min-width: 0px) {
+    .col-s-1 {width: 8.33%}
+    .col-s-2 {width: 16.66%}
+    .col-s-3 {width: 25%}
+    .col-s-4 {width: 33.33%}
+    .col-s-5 {width: 41.66%}
+    .col-s-6 {width: 50%}
+    .col-s-7 {width: 58.33%}
+    .col-s-8 {width: 66.66%}
+    .col-s-9 {width: 75%}
+    .col-s-10 {width: 83.33%}
+    .col-s-11 {width: 91.66%}
+    .col-s-12 {width: 100%}
+
+    .caracteristica_titulo {
+        font-size: small;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .propiedad_titulo {
+        font-size: medium;
+        font-weight: bold;
+        padding: 0em;
+    }
+}
+
+@media (min-width: 826px) {
+    .col-m-1 {width: 8.33%}
+    .col-m-2 {width: 16.66%}
+    .col-m-3 {width: 25%}
+    .col-m-4 {width: 33.33%}
+    .col-m-5 {width: 41.66%}
+    .col-m-6 {width: 50%}
+    .col-m-7 {width: 58.33%}
+    .col-m-8 {width: 66.66%}
+    .col-m-9 {width: 75%}
+    .col-m-10 {width: 83.33%}
+    .col-m-11 {width: 91.66%}
+    .col-m-12 {width: 100%}
+
+    .caracteristica_titulo {
+        font-size: larger;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .propiedad_titulo {
+        font-size: larger;
+        font-weight: bold;
+        padding: 0em;
+    }
+}
+
+[class*="col-"] {
+    float: left;
+    /*border: 1px solid lightgray;*/
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.p_vender {
+    padding: 1em 3vw;
+}
+
+.contendor_vender {
+    -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
+    background-color: white;
+}
+
+.vender_titulo {
+    text-align: center;
+    padding: 0.5em 1em;
+    padding-top: 2em;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.contendor_propiedades {
+    padding: 1em;
+}
+
+.propiedad {
+    border-top: 1px solid lightgray;
+    padding: 1em 1em;
+}
+
+.sin_linea {
+    border-top: 1px solid white;
+}
+
+.caracteristica_mas {
+    padding: 0.5em;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.caracteristica_mas:hover {
+    background-color: lightgray;
+}
+
+.input_caractersitica {
+    text-align: center;
+    width: 100%;
+    padding: 1em 1vw;
+}
+
+.contenedor_input {
+    padding: 0.5em 0em;
+}
+
+.input_nombre {
+    width: 80%;
+    padding: 1em 1em;
+}
+
+.input_precio {
+    padding: 0.5em 1em;
+    width: 50%;
+    text-align: right;
+    font-size: large;
+}
+
+#mainImg {
+    padding: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+
+.mas_img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img_p {
+    padding: 1em;
+}
+
+
+#b_vender {
+    padding: 1em;
+    text-align: center;
+}
+
+.myButton {
+	background-color:#44c767;
+	border-radius:10px;
+	border:1px solid #ffffff00;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:12px 34px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
