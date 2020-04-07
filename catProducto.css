@@ -35,7 +35,47 @@
         padding: 0.5em;
     }
 
-    .h{height: auto;}
+    .h{height: 14em;}
+
+    #preMenu label{
+        display: block;
+        background: steelblue;
+    }
+
+
+    .menuV2{
+        position: absolute;
+        background: rgba(181, 188, 194, 0.9);
+        width: 70%;
+        margin-left: -70%;
+        transition: 0.5s;
+    }
+
+
+    .menuV2 ul{
+        flex-direction: column;
+        padding:0;
+        margin: 0;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    #btn-menu:checked ~ .menuV2{
+        margin: 0;
+    }
+
+    .p-c{
+        padding-top: 0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-bottom: 0.5em;
+    }
     
 }
 
@@ -66,6 +106,42 @@
     }
 
     .h{height: 30em;}
+
+    #preMenu label{
+        display: none;
+    }
+
+    .menuV2{
+        position: absolute;
+        background: steelblue;
+        width: 100%;
+        margin-left: 0%;
+        transition: none;
+    }
+
+    
+    .menuV2 ul{
+        margin: 0;
+        list-style:none;
+        padding:0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }    
+
+    .p-c{
+        padding-top: 3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-bottom: 0.5em;
+    }
 }
 
 [class *= "col-"]{
@@ -110,12 +186,7 @@
     padding-bottom: 0.25em;
 }
 
-.p-c{
-    padding-top: 0.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-bottom: 0.5em;
-}
+
 
 /*Bordes*/
 .borde-0{border: 1px solid black;}
@@ -254,4 +325,26 @@ h1 {
 
 .e-titulo {
     padding-left: 3em;
+}
+
+#btn-menu{
+    display: none;
+}
+
+
+.img-menu:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3)
+}
+
+.img-menu{
+    width: 3em;
+    height: 3em;
+    padding:0.3em;
+    border-right: 1px solid white;
+}
+
+.menuV2 li:hover{
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }

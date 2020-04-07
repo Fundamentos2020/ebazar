@@ -57,6 +57,37 @@ body {
         font-size: large;
         font-weight: bold;
     }
+
+    header label{
+        display: block;
+    }
+
+    .menuV2{
+        position: absolute;
+        background: rgba(181, 188, 194, 0.9);
+        width: 70%;
+        margin-left: -70%;
+        transition: 0.5s;
+    }
+
+
+    .menuV2 ul{
+        flex-direction: column;
+        padding:0;
+        margin: 0;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    #btn-menu:checked ~ .menuV2{
+        margin: 0;
+    }
 }
 
 @media (min-width: 826px) {
@@ -90,7 +121,7 @@ body {
     }
 
     .p_carrito {
-        padding: 1em 3vw;
+        padding: 3em 3vw;
     }
 
     .compra_subtotal {
@@ -109,6 +140,37 @@ body {
         font-size: x-large;
         font-weight: bold;
     }
+
+    header label{
+        display: none;
+        width: 1.5em;
+        height: 2.5em;
+        padding: 0.5em;
+    }
+    .menuV2{
+        position: absolute;
+        background: steelblue;
+        width: 100%;
+        margin-left: 0%;
+        transition: none;
+    }
+
+    
+    .menuV2 ul{
+        margin: 0;
+        list-style:none;
+        padding:0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }    
 }
 
 [class*="col-"] {
@@ -122,6 +184,7 @@ body {
     display: table;
 }
 
+.m-0{margin: 0;}
 
 .contendor_carrito {
     -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);

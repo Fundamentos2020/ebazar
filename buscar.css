@@ -56,6 +56,46 @@ body {
         font-size: medium;
         color: teal;
     }
+
+    #preMenu label{
+        display: block;
+        background: steelblue;
+    }
+
+
+    .menuV2{
+        position: absolute;
+        background: rgba(181, 188, 194, 0.9);
+        width: 70%;
+        margin-left: -70%;
+        transition: 0.5s;
+    }
+
+
+    .menuV2 ul{
+        flex-direction: column;
+        padding:0;
+        margin: 0;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .cabeza_resultados {
+        padding-top: 1em;
+        padding-right: 2em;
+        padding-left: 2em;
+        padding-bottom: 1em;
+    }
+
+    #btn-menu:checked ~ .menuV2{
+        margin: 0;
+    }
 }
 
 @media (min-width: 826px) {
@@ -93,6 +133,42 @@ body {
         font-size: large;
         color: teal;
     }
+
+    .cabeza_resultados {
+        padding-top: 3em;
+        padding-right: 2em;
+        padding-left: 2em;
+        padding-bottom: 1em;
+    }
+
+    #preMenu label{
+        display: none;
+    }
+
+    .menuV2{
+        position: absolute;
+        background: steelblue;
+        width: 100%;
+        margin-left: 0%;
+        transition: none;
+    }
+
+    
+    .menuV2 ul{
+        margin: 0;
+        list-style:none;
+        padding:0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }  
 }
 
 [class*="col-"] {
@@ -100,9 +176,7 @@ body {
     /*border: 1px solid lightgray;*/
 }
 
-.cabeza_resultados {
-    padding: 1em 2em;
-}
+
 
 .img_producto {
     width: 100%;
@@ -136,3 +210,28 @@ body {
     background-color: lightgray;
     font-weight: bold;
 }
+
+
+#btn-menu{
+    display: none;
+}
+
+
+.img-menu:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3)
+}
+
+.img-menu{
+    width: 3em;
+    height: 3em;
+    padding:0.3em;
+    border-right: 1px solid white;
+}
+
+.menuV2 li:hover{
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.m-0{margin:0;}

@@ -24,7 +24,48 @@
     .col-s-11{width: 91.66%;}
     .col-s-12{width: 100%;}
 
+    .p-c{
+        padding-top: 0em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    #preMenu label{
+        display: block;
+        background: steelblue;
+    }
+
+
+    .menuV2{
+        position: absolute;
+        background: rgba(181, 188, 194, 0.9);
+        width: 70%;
+        margin-left: -70%;
+        transition: 0.5s;
+    }
+
+
+    .menuV2 ul{
+        flex-direction: column;
+        padding:0;
+        margin: 0;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    #btn-menu:checked ~ .menuV2{
+        margin: 0;
+    }
+
 }
+
 
 @media(min-width: 768px){
     .col-m-1{width: 8.33%;}
@@ -39,8 +80,43 @@
     .col-m-10{width: 83.33%;}
     .col-m-11{width: 91.66%;}
     .col-m-12{width: 100%;}
+    
+    #preMenu label{
+        display: none;
+    }
 
-   
+    .menuV2{
+        position: absolute;
+        background: steelblue;
+        width: 100%;
+        margin-left: 0%;
+        transition: none;
+    }
+
+    
+    .menuV2 ul{
+        margin: 0;
+        list-style:none;
+        padding:0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menuV2 li{
+        display: block;
+        padding: 0.5em 1em;
+        color: white;
+        flex-grow: 1;
+        text-align: center;
+    }    
+
+    .p-c{
+        padding-top: 2em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-bottom: 0.5em;
+    }
+ 
 }
 
 
@@ -48,6 +124,7 @@
 [class *= "col-"]{
     float: left;
 }
+
 
 
 .p-1{ padding: 0.2em;}
@@ -59,12 +136,7 @@
 .p-1b{padding-bottom: 0.5em}
 .p-2b{padding-bottom: 1em}
 
-.p-c{
-    padding-top: 0;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-bottom: 0.5em;
-}
+
 
 .p-c-1{
     padding-top: 0.5em;
@@ -264,3 +336,30 @@ html{
 
 
 .text-center { text-align: center; }
+
+header{
+    width: 100%;
+    background: steelblue;
+}
+
+#btn-menu{
+    display: none;
+}
+
+
+.img-menu:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3)
+}
+
+.img-menu{
+    width: 3em;
+    height: 3em;
+    padding:0.3em;
+    border-right: 1px solid white;
+}
+
+.menuV2 li:hover{
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
