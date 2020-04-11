@@ -20,6 +20,10 @@ body {
     .col-s-10 {width: 83.33%}
     .col-s-11 {width: 91.66%}
     .col-s-12 {width: 100%}
+
+    .p_faq {
+        padding: 1em 3vw;
+    }
 }
 
 @media (min-width: 826px) {
@@ -35,6 +39,10 @@ body {
     .col-m-10 {width: 83.33%}
     .col-m-11 {width: 91.66%}
     .col-m-12 {width: 100%}
+
+    .p_faq {
+        padding: 3em 3vw;
+    }
 }
 
 [class*="col-"] {
@@ -48,9 +56,7 @@ body {
     display: table;
 }
 
-.p_faq {
-    padding: 1em 3vw;
-}
+
 
 .contendor_carrito {
     -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
@@ -69,3 +75,5 @@ body {
     font-size: medium;
     line-height: 30px;
 }
+
+.m-0{margin:0;}

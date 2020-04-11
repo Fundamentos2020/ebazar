@@ -45,6 +45,10 @@ body {
         font-weight: bold;
         padding: 0em;
     }
+
+    .p_vender {
+        padding: 1em 3vw;
+    }
 }
 
 @media (min-width: 826px) {
@@ -72,6 +76,10 @@ body {
         font-weight: bold;
         padding: 0em;
     }
+
+    .p_vender {
+        padding: 3em 3vw;
+    }
 }
 
 [class*="col-"] {
@@ -85,9 +93,7 @@ body {
     display: table;
 }
 
-.p_vender {
-    padding: 1em 3vw;
-}
+
 
 .contendor_vender {
     -webkit-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
@@ -195,3 +201,5 @@ body {
 	position:relative;
 	top:1px;
 }
+
+.m-0{margin: 0;}
