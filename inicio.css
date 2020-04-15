@@ -64,6 +64,10 @@
         margin: 0;
     }
 
+    .e-titulo {
+        padding-left: 1em;
+    }
+
 }
 
 
@@ -115,6 +119,10 @@
         padding-left: 0.5em;
         padding-right: 0.5em;
         padding-bottom: 0.5em;
+    }
+
+    .e-titulo {
+    padding-left: 3em;
     }
  
 }
