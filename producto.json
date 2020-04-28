@@ -1,0 +1,25 @@
+{
+    "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+    "precio": 687.0,
+    "disponibles": 5,
+    "ubicacion": "San Luis Potosi",
+    "descripcion_corta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, hic. Delectus harum iusto placeat sapiente, debitis vero ea assumenda excepturi ipsam, dicta hic. Temporibus, porro?",
+    "descripcion_larga": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum.",
+    "caracteristicas": {
+        "Color": "Rojo",
+        "Año": "2017",
+        "Modelo": "A"
+    },
+    "preguntas": [
+        {
+            "pregunta": "¿Lorem ipsum dolor sit amet consectetur.?",
+            "fecha": "03/03/2020",
+            "respuesta": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!"
+        },
+        {
+            "pregunta": "¿Lorem ipsum dolor sit amet consectetur.?",
+            "fecha": "03/03/2020",
+            "respuesta": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!"
+        }
+    ]
+}

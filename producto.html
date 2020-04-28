@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="producto.css">
     <title>Producto</title>
 </head>
-<body class="m-0">
+<body class="m-0" onload="cargar();">
     <script src="producto.js"></script>
     <div class="row">
         <!----Sección del encabezado de la página--->
@@ -72,20 +72,22 @@
                     </div>
                 </div>
                 <div class="col-m-5 col-s-12 producto_detalles">
-                    <div class="producto_texto producto_nombre">
-                        Lorem ipsum dolor, sit amet consectetur.
+                    <div id="p_titulo" class="producto_texto producto_nombre">
+                        <!--Lorem ipsum dolor, sit amet consectetur.-->
                     </div>
-                    <div class="producto_texto producto_precio">
-                        $ 687.0
+                    <div id="p_precio" class="producto_texto producto_precio">
+                        <!--$ 687.0-->
                     </div>
-                    <div class="producto_texto producto_cantidad">
-                        5 disponibles
+                    <div id="p_disponibles" class="producto_texto producto_cantidad">
+                        <!--5 disponibles-->
                     </div>
-                    <div class="producto_texto producto_cantidad">
-                        Ubicacion: San Luis Potosi
+                    <div id="p_ubicacion" class="producto_texto producto_cantidad">
+                        <!--Ubicacion: San Luis Potosi-->
                     </div>
-                    <div class="producto_texto producto_cantidad">
+                    <div id="p_descripcion_c"class="producto_texto producto_cantidad">
+                        <!--
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, hic. Delectus harum iusto placeat sapiente, debitis vero ea assumenda excepturi ipsam, dicta hic. Temporibus, porro?
+                        -->
                     </div>
                     <div id="b_comprar">
                         <a href="carrito.html" class="myButton">Comprar</a>
@@ -99,21 +101,24 @@
                         <div class="producto_texto producto_titulo">
                             Acerca del producto
                         </div>
-                        <div class="producto_texto producto_descripcion">
+                        <div id="p_descripcion_l" class="producto_texto producto_descripcion">
+                            <!--
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum.
+                            -->
                         </div>
 
-                        <div class="contenedor_caracteristicas">
+                        <div id="p_caracteristicas" class="contenedor_caracteristicas">
+                            <!--
                             <div class="producto_texto producto_caracteristica">
                                 Color: rojo
                             </div>
-                            <!--class="producto_texto producto_caracteristica"-->
                             <div class="producto_texto producto_caracteristica">
                                 Año: 2017
                             </div>
                             <div class="producto_texto producto_caracteristica">
                                 Modelo: A
                             </div>
+                            -->
                         </div>
                     </div>
                     <!--Comentatios de producto-->
@@ -121,19 +126,23 @@
                         <div class="producto_texto producto_titulo">
                             Preguntas
                         </div>
-                        <div class="comment_box">
-                            <div class="comment_titulo">
-                                ¿Lorem ipsum dolor sit amet consectetur.?
-                                <div class="comment_fecha">03/03/2020</div>
+                        <div id="p_preguntas">
+                            <!--
+                            <div class="comment_box">
+                                <div class="comment_titulo">
+                                    ¿Lorem ipsum dolor sit amet consectetur.?
+                                    <div class="comment_fecha">03/03/2020</div>
+                                </div>
+                                <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
                             </div>
-                            <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
-                        </div>
-                        <div class="comment_box">
-                            <div class="comment_titulo">
-                                ¿Lorem ipsum dolor sit amet?
-                                <div class="comment_fecha">03/03/2020</div>
+                            <div class="comment_box">
+                                <div class="comment_titulo">
+                                    ¿Lorem ipsum dolor sit amet?
+                                    <div class="comment_fecha">03/03/2020</div>
+                                </div>
+                                <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
                             </div>
-                            <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
+                            -->
                         </div>
                     </div>
                 </div>
