@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "precio": "560",
+        "url": "https://picsum.photos/id/437/300/300",
+        "categoria": "Lo más vendido"
+    },
+    {
+        "id": "2",
+        "precio": "560",
+        "url": "https://picsum.photos/id/537/300/300",
+        "categoria": "Lo más vendido"
+    },
+    {
+        "id": "3",
+        "precio": "560",
+        "url": "https://picsum.photos/id/237/300/300",
+        "categoria": "Lo más vendido"
+    },
+    {
+        "id": "4",
+        "precio": "560",
+        "url": "https://picsum.photos/id/637/300/300",
+        "categoria": "Lo más vendido"
+    },
+    {
+        "id": "5",
+        "precio": "560",
+        "url": "https://picsum.photos/id/937/300/300",
+        "categoria": "Lo más vendido"
+    }
+]
