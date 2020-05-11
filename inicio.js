@@ -25,7 +25,6 @@ function cargaInicial()
             document.getElementById('masVendido').innerHTML = htmlImagenes;
         }
     }
-
     //Envía el mensaje
     xhr.send();
 }

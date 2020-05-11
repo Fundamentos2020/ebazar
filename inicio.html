@@ -10,6 +10,16 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="iconos.css">
     <title>Inicio</title>
+
+    <link rel="stylesheet" href="flexslider.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function() {
+          $('.flexslider').flexslider();
+        });
+    </script>
 </head>
 <body class = "mar-0" onload=cargaInicial()>
     <div class="row color-1">
@@ -52,8 +62,18 @@
      <!--Sección del contenedor de la página-->
      <div class="p-c color-Contenedor">
         <div class="row p-c-1 contenedor_producto">
-           <div class="col-m-12 col-s-12">
-                <img class ="img-fluid" src="https://picsum.photos/1500/500" alt="">
+           <div class="col-m-12 col-s-12 flexslider">
+                <ul class="slides">
+                    <li>
+                        <img src="https://picsum.photos/id/200/1400/400" alt="">
+                    </li>
+                    <li>
+                        <img src="https://picsum.photos/id/307/1400/400" alt="">
+                    </li>
+                    <li>
+                        <img src="https://picsum.photos/id/409/1400/400" alt="">
+                    </li>
+                </ul>
            </div>
         </div>
         <div class="row p-c-1 contenedor_producto" id = "masVendido">
