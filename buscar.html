@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="buscar.css">
     <title>Buscar</title>
 </head>
-<body class="m-0">
+<body class="m-0" onload="cargar();">
+    <script src="buscar.js"></script>
     <div class="row">
         <!----Sección del encabezado de la página--->
         <div class="row color-1">
@@ -49,16 +50,16 @@
         </div>
     <div>
   
-
+    <!--Resultado de busqueda-->
      <div class="row">
          <div class="col-12 cabeza_resultados">
-             <div class="texto_resutlados">4 de 500 resultados para "Lorem ipsum"</div>
+            <div class="texto_resutlados" id="texto_res"></div>
          </div>
      </div>
     
      <div class="row">
-         <div class="col-12">
-             <!--Contenedor de producto-->
+         <div class="col-12" id="productos">
+             <!--
              <div class="row producto_contendor">
                 <div class="col-m-2 col-s-4">
                     <img class="img_producto" src="https://picsum.photos/200/200" alt="">
@@ -70,54 +71,12 @@
                     <div class="texto_caracterisitica">5 Disponibles</div>
                 </div>
              </div>
-
-             <!--Contenedor de producto-->
-             <div class="row producto_contendor">
-                <div class="col-m-2 col-s-4">
-                    <img class="img_producto" src="https://picsum.photos/200/200" alt="">
-                </div>
-                <div class="col-m-10 col-s-8">
-                    <div class="texto_titulo"> <a href="producto.html">Lorem ipsum dolor sit amet.</a> </div>
-                    <div class="texto_precio">$ 456.0</div>
-                    <div class="texto_caracterisitica">Ubicacion: San Luis Potosi</div>
-                    <div class="texto_caracterisitica">5 Disponibles</div>
-                </div>
-             </div>
-
-             <!--Contenedor de producto-->
-             <div class="row producto_contendor">
-                <div class="col-m-2 col-s-4">
-                    <img class="img_producto" src="https://picsum.photos/200/200" alt="">
-                </div>
-                <div class="col-m-10 col-s-8">
-                    <div class="texto_titulo"> <a href="producto.html">Lorem ipsum dolor sit amet.</a> </div>
-                    <div class="texto_precio">$ 456.0</div>
-                    <div class="texto_caracterisitica">Ubicacion: San Luis Potosi</div>
-                    <div class="texto_caracterisitica">5 Disponibles</div>
-                </div>
-             </div>
-
-             <!--Contenedor de producto-->
-             <div class="row producto_contendor">
-                <div class="col-m-2 col-s-4">
-                    <img class="img_producto" src="https://picsum.photos/200/200" alt="">
-                </div>
-                <div class="col-m-10 col-s-8">
-                    <div class="texto_titulo"> <a href="producto.html">Lorem ipsum dolor sit amet.</a> </div>
-                    <div class="texto_precio">$ 456.0</div>
-                    <div class="texto_caracterisitica">Ubicacion: San Luis Potosi</div>
-                    <div class="texto_caracterisitica">5 Disponibles</div>
-                </div>
-             </div>
+            -->
          </div>
      </div>
 
      <!--Mas paginas-->
-     <div class="mas_paginas">
-         <div class="pagina pagina_actual"><a href="buscar.html">1</a></div>
-         <div class="pagina"><a href="buscar.html">2</a></div>
-         <div class="pagina"><a href="buscar.html">3</a></div>
-         <div class="pagina"><a href="buscar.html">Siguiente ></a></div>
+     <div class="mas_paginas" id="paginas">
      </div>
 
      <div class = "text-center color-3">

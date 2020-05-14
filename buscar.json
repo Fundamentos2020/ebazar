@@ -1,0 +1,37 @@
+{
+    "pagina": 1,
+    "totalPaginas": 3,
+    "totalResultados": 400,
+    "resultados": 4,
+    "consulta": "Lorem ipsum",
+    "productos": [
+        {
+            "id": "0",
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 687.0,
+            "disponibles": 5,
+            "ubicacion": "San Luis Potosi"
+        },
+        {
+            "id": "0",
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 687.0,
+            "disponibles": 5,
+            "ubicacion": "San Luis Potosi"
+        },
+        {
+            "id": "0",
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 687.0,
+            "disponibles": 5,
+            "ubicacion": "San Luis Potosi"
+        },
+        {
+            "id": "0",
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 687.0,
+            "disponibles": 5,
+            "ubicacion": "San Luis Potosi"
+        }
+    ]
+}
