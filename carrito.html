@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="carrito.css">
     <title>Carrito de compras</title>
 </head>
-<body class="m-0">
+<body class="m-0" onload="cargar();">
+    <script src="carrito.js"></script>
     <div class="row">
         <!----Sección del encabezado de la página--->
         <div class="row color-1">
@@ -53,52 +54,33 @@
     <div class="row p_carrito">
         <div class="col-m-12 col-s-12 contendor_carrito">
             <div class="carrito_titulo">Carrito</div>
-
-            <!--Contendor con elementos en el carrito-->
-            <div class="contendor_productos">
-                <div class="compra_producto">
-                    <div class="compra_imagen">
-                        <img src="https://picsum.photos/100/100" alt="">
-                    </div>
-                    <div class="compra_titulo">
-                        <a href="producto.html">Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="compra_precio">
-                        $ 230.0
-                    </div>
-                </div>
-                <div class="compra_producto">
-                    <div class="compra_imagen">
-                        <img src="https://picsum.photos/100/100" alt="">
-                    </div>
-                    <div class="compra_titulo">
-                        <a href="producto.html">Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="compra_precio">
-                        $ 230.0
+            <div id="carrito_c">
+                <!--Contendor con elementos en el carrito-->
+                <!--
+                <div class="contendor_productos">
+                    <div class="compra_producto">
+                        <div class="compra_imagen">
+                            <img src="https://picsum.photos/100/100" alt="">
+                        </div>
+                        <div class="compra_titulo">
+                            <a href="producto.html">Lorem, ipsum dolor.</a>
+                        </div>
+                        <div class="compra_precio">
+                            $ 230.0
+                        </div>
                     </div>
                 </div>
-                <div class="compra_producto">
-                    <div class="compra_imagen">
-                        <img src="https://picsum.photos/100/100" alt="">
-                    </div>
-                    <div class="compra_titulo">
-                        <a href="producto.html">Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="compra_precio">
-                        $ 230.0
-                    </div>
-                </div>
+                -->
             </div>
 
             <div class="compra_total">
-                <div class="compra_subtotal">
+                <div class="compra_subtotal" id="precio_producto">
                     Producto: $355.0
                 </div>
-                <div class="compra_subtotal">
+                <div class="compra_subtotal" id="precio_envio">
                     Envio: $50.0
                 </div>
-                <div class="compra_texto_total">
+                <div class="compra_texto_total" id="precio_total">
                     Total $405.0
                 </div>
                 <div id="b_comprar">

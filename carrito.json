@@ -1,0 +1,20 @@
+{
+    "envio": 50,
+    "productos": [
+        {
+            "id": 0,
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 230.0
+        },
+        {
+            "id": 0,
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 230.0
+        },
+        {
+            "id": 0,
+            "titulo": "Lorem ipsum dolor, sit amet consectetur.",
+            "precio": 230.0
+        }
+    ]
+}
