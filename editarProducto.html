@@ -8,30 +8,8 @@
     <link rel="stylesheet" href="editarProducto.css">
     <title>Editar producto</title>
 </head>
-<body class="m-0">
-    <script>
-        var loadFile = function(event) {
-          var output = document.getElementById('mainImg');
-          output.src = URL.createObjectURL(event.target.files[0]);
-          output.onload = function() {
-            URL.revokeObjectURL(output.src) // free memory
-          }
-        };
-
-        function agregarCarac() {
-            var contendor = document.getElementById("caracteristicas");
-
-            contendor.innerHTML += `
-                            <div class="col-6">
-                                <input type="text" class="input_caractersitica" placeholder="Ej. Color">
-
-                            </div>
-                            <div class="col-6">
-                                <input type="text" class="input_caractersitica" placeholder="Ej. Rojo">
-                            </div>
-            `;
-        }
-    </script>
+<body class="m-0" onload="cargar();">
+    <script src="editarProducto.js"></script>
 
     <div class="row">
         <!----Sección del encabezado de la página--->
@@ -83,7 +61,7 @@
                         Nombre de producto
                     </div>
                     <div class="contenedor_input">
-                        <input value="Lorem ipsum dolor sit amet." type="text" class="input_nombre" placeholder="Ej. Monitor gamer">
+                        <input id="producto_nombre" value="Lorem ipsum dolor sit amet." type="text" class="input_nombre" placeholder="Ej. Monitor gamer">
                     </div>
                 </div>
 
@@ -92,7 +70,7 @@
                         Descripción basica
                     </div>
                     <div class="contenedor_input">
-                        <input value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis." 
+                        <input id="producto_descripcion_basica" value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis." 
                         type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
                     </div>
                 </div>
@@ -102,7 +80,7 @@
                         Descripción completa
                     </div>
                     <div class="contenedor_input">
-                        <input value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum." 
+                        <input id="producto_descripcion_completa" value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum." 
                         type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
                     </div>
                 </div>
@@ -112,7 +90,7 @@
                         Ubicación
                     </div>
                     <div class="contenedor_input">
-                        <input value="San Luis Potosi"
+                        <input id="producto_ubicacion" value="San Luis Potosi"
                         type="text" class="input_nombre" placeholder="Ej. San Luis Potosi">
                     </div>
                 </div>
@@ -122,7 +100,7 @@
                         Precio
                     </div>
                     <div class="contenedor_input">
-                        <input value="540" type="text" class="input_precio" placeholder="100">
+                        <input id="producto_precio" value="540" type="text" class="input_precio" placeholder="100">
                         <span>MXN</span>
                     </div>
                 </div>
@@ -175,28 +153,20 @@
                             <div class="caracteristica_titulo">Valor</div>
                         </div>
 
-                        <div id="caracteristicas">
-                            <div class="col-6">
-                                <input value="Color"
-                                type="text" class="input_caractersitica" placeholder="Ej. Color">
+                        <div id="contendor_caracteristicas">
+                            <!--
+                            <div id="caracteristicas">
+                                <div class="col-6">
+                                    <input value="Color"
+                                    type="text" class="input_caractersitica" placeholder="Ej. Color">
 
+                                </div>
+                                <div class="col-6">
+                                    <input value="Rojo"
+                                    type="text" class="input_caractersitica" placeholder="Ej. Rojo">
+                                </div>
                             </div>
-                            <div class="col-6">
-                                <input value="Rojo"
-                                type="text" class="input_caractersitica" placeholder="Ej. Rojo">
-                            </div>
-                        </div>
-
-                        <div id="caracteristicas">
-                            <div class="col-6">
-                                <input value="Año2"
-                                type="text" class="input_caractersitica" placeholder="Ej. Color">
-
-                            </div>
-                            <div class="col-6">
-                                <input value="2015"
-                                type="text" class="input_caractersitica" placeholder="Ej. Rojo">
-                            </div>
+                            -->
                         </div>
 
                         <div class="col-12 caracteristica_mas" onclick="agregarCarac();">

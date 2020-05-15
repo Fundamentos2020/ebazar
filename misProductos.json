@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "titulo": "Lorem ipsum dolor sit amet.",
+        "precio": 456,
+        "vendidos": 5,
+        "comentarios": 5
+    },
+    {
+        "id": 0,
+        "titulo": "Lorem ipsum dolor sit amet.",
+        "precio": 456,
+        "vendidos": 5,
+        "comentarios": 5
+    }
+]

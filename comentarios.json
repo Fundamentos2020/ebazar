@@ -1,0 +1,30 @@
+[
+    {
+        "pregunta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?",
+        "fechaPregunta": "03/03/2020",
+        "tieneRespuesta": false
+    },
+    {
+        "pregunta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?",
+        "fechaPregunta": "03/03/2020",
+        "tieneRespuesta": false
+    },
+    {
+        "pregunta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?",
+        "fechaPregunta": "03/03/2020",
+        "tieneRespuesta": true,
+        "respuesta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa vero ipsa optio nulla veritatis adipisci odio est quo ipsum asperiores perferendis omnis aut, totam iusto expedita soluta tempora harum!"
+    },
+    {
+        "pregunta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?",
+        "fechaPregunta": "03/03/2020",
+        "tieneRespuesta": true,
+        "respuesta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa vero ipsa optio nulla veritatis adipisci odio est quo ipsum asperiores perferendis omnis aut, totam iusto expedita soluta tempora harum!"
+    },
+    {
+        "pregunta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?",
+        "fechaPregunta": "03/03/2020",
+        "tieneRespuesta": true,
+        "respuesta": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa vero ipsa optio nulla veritatis adipisci odio est quo ipsum asperiores perferendis omnis aut, totam iusto expedita soluta tempora harum!"
+    }
+]

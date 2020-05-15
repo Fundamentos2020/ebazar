@@ -1,0 +1,13 @@
+{
+    "nombre": "Lorem ipsum dolor sit ",
+    "descripcionBasica": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis.",
+    "descripcionCompleta": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum.",
+    "ubicacion": "San Luis Potosi",
+    "precio": 540,
+    "caracteristicas": [
+        {
+            "caracteristica": "Año",
+            "valor": "2015"
+        }
+    ]
+}

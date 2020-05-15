@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="comentarios.css">
     <title>Comentarios</title>
 </head>
-<body class="mar-0">
+<body class="mar-0" onload="cargar();">
+    <script src="comentarios.js"></script>
     <div class="row">
         <!----Sección del encabezado de la página--->
         <div class="row color-1">
@@ -53,7 +54,8 @@
         <div class="col-m-12 col-s-12 contendor_comentarios">
             <div class="comentarios_titulo">Comentarios sin contestar</div>
 
-            <div class="contendor_comentario">
+            <div class="contendor_comentario" id="comentarios_sin_contestar">
+                <!--
                 <div class="row comentario">
                     <div class="col-12">
                         <div class="texto_titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?</div>
@@ -74,32 +76,13 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row comentario">
-                    <div class="col-12">
-                        <div class="texto_titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?</div>
-                        <div class="texto_caracterisitica"> 03/03/2020</div>
-                        <div class="respuesta">
-                            <span>Respuesta: </span><input type="text" name="" id="respuesta_input">
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div id="b_eleminar">
-                            <div style="padding: 0.5em 0.5em;">
-                                <a href="#" class="myButtonR">Eliminar</a>
-                            </div>
-                            <div style="padding: 0.5em 0.5em;">
-                                <a href="#" class="myButtonV">Enviar</a>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                -->
             </div>
 
             <div class="comentarios_titulo">Comentarios</div>
 
-            <div class="contendor_comentario">
+            <div class="contendor_comentario" id="comentarios_contestados">
+                <!--
                 <div class="row comentario">
                     <div class="col-12">
                         <div class="texto_titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?</div>
@@ -112,45 +95,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row comentario">
-                    <div class="col-12">
-                        <div class="texto_titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?</div>
-                        <div class="texto_caracterisitica"> 03/03/2020</div>
-                        <div class="texto_respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa vero ipsa optio nulla veritatis adipisci odio est quo ipsum asperiores perferendis omnis aut, totam iusto expedita soluta tempora harum!</div>
-                    </div>
-                    <div class="col-12">
-                        <div id="b_eleminar">
-                            <a href="#" class="myButtonR">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row comentario">
-                    <div class="col-12">
-                        <div class="texto_titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?</div>
-                        <div class="texto_caracterisitica"> 03/03/2020</div>
-                        <div class="texto_respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa vero ipsa optio nulla veritatis adipisci odio est quo ipsum asperiores perferendis omnis aut, totam iusto expedita soluta tempora harum!</div>
-                    </div>
-                    <div class="col-12">
-                        <div id="b_eleminar">
-                            <a href="#" class="myButtonR">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row comentario">
-                    <div class="col-12">
-                        <div class="texto_titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, corporis?</div>
-                        <div class="texto_caracterisitica"> 03/03/2020</div>
-                        <div class="texto_respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa vero ipsa optio nulla veritatis adipisci odio est quo ipsum asperiores perferendis omnis aut, totam iusto expedita soluta tempora harum!</div>
-                    </div>
-                    <div class="col-12">
-                        <div id="b_eleminar">
-                            <a href="#" class="myButtonR">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
+                -->
             </div>
         </div>
     </div>
