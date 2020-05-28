@@ -1,11 +1,21 @@
 function cargar() {
+    // Cargar parametros del URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    let titulo = "monitor";
+    if(urlParams.has("titulo")) {
+        titulo = urlParams.get("titulo");
+    }
+
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "buscar.json", true);
+    xhr.open("GET", `${serverUrl}/buscar?titulo=${titulo}`, true);
+    //xhr.open("GET", "buscar.json", true);
 
     xhr.onload = function() {
         if(this.status === 200) {
-            let resultadoBusqueda = JSON.parse(this.responseText);
+            let resultadoBusqueda = JSON.parse(this.responseText).data.busqueda;
             console.log(resultadoBusqueda);
 
             // Carga los valores del producto
@@ -14,6 +24,13 @@ function cargar() {
 
             let productos = document.getElementById("productos");
             let productosHtml = "";
+
+            if(resultadoBusqueda.productos.length == 0) {
+                productosHtml = `
+                    <div class="texto_titulo centro">No hay resultados</div>
+                `;
+            }
+
             resultadoBusqueda.productos.forEach(producto => {
                 productosHtml += `
                 <div class="row producto_contendor">
@@ -21,7 +38,7 @@ function cargar() {
                         <img class="img_producto" src="https://picsum.photos/200/200" alt="">
                     </div>
                     <div class="col-m-10 col-s-8">
-                        <div class="texto_titulo"> <a href="producto.html">${producto.titulo}</a> </div>
+                        <div class="texto_titulo"> <a href="producto.html?id=${producto.id}">${producto.titulo}</a> </div>
                         <div class="texto_precio">$ ${producto.precio}</div>
                         <div class="texto_caracterisitica">Ubicacion: ${producto.ubicacion}</div>
                         <div class="texto_caracterisitica">${producto.disponibles} Disponibles</div>
@@ -42,7 +59,8 @@ function cargar() {
                 
             }
 
-            p += `<div class="pagina"><a href="buscar.html">Siguiente ></a></div>`;
+            if(resultadoBusqueda.totalPaginas > 1)
+                p += `<div class="pagina"><a href="buscar.html">Siguiente ></a></div>`;
 
             paginas.innerHTML = p;
         }

@@ -1,12 +1,21 @@
-
 function cargar() {
+    // Cargar parametros del URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    let id = 1;
+    if(urlParams.has("id")) {
+        id = urlParams.get("id");
+    }
+
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "producto.json", true);
+    xhr.open("GET", `${serverUrl}/productos?producto_id=${id}`, true);
+    //xhr.open("GET", "producto.json", true);
 
     xhr.onload = function() {
         if(this.status === 200) {
-            let producto = JSON.parse(this.responseText);
+            let producto = JSON.parse(this.responseText).data.producto;
             console.log(producto);
 
             // Carga los valores del producto
@@ -41,6 +50,14 @@ function cargar() {
 
             let preguntas = document.getElementById("p_preguntas");
             let p = "";
+
+            if(producto.preguntas.length == 0) {
+                p = `
+                    <div class="producto_texto producto_caracteristica no_hay">
+                        No hay preguntas.
+                    </div>
+                `;
+            }
             producto.preguntas.forEach(pregunta => {
                 p += `
                     <div class="comment_box">
@@ -56,6 +73,13 @@ function cargar() {
             });
 
             preguntas.innerHTML = p;
+        } else if(this.status === 404) {
+            let contendor = document.getElementById("contenedor_mamalon");
+            contendor.innerHTML = `
+                <div class="row p_producto">
+                    <h1>404 Not Found</h1>
+                </div>
+            `;
         }
     }
 

@@ -9,6 +9,7 @@
     <title>Carrito de compras</title>
 </head>
 <body class="m-0" onload="cargar();">
+    <script src="server.js"></script>
     <script src="carrito.js"></script>
     <div class="row">
         <!----Sección del encabezado de la página--->
@@ -52,7 +53,7 @@
   
 
     <div class="row p_carrito">
-        <div class="col-m-12 col-s-12 contendor_carrito">
+        <div class="col-m-12 col-s-12 contendor_carrito" id="contendor-n">
             <div class="carrito_titulo">Carrito</div>
             <div id="carrito_c">
                 <!--Contendor con elementos en el carrito-->
@@ -73,7 +74,7 @@
                 -->
             </div>
 
-            <div class="compra_total">
+            <div class="compra_total" id="c_total">
                 <div class="compra_subtotal" id="precio_producto">
                     Producto: $355.0
                 </div>

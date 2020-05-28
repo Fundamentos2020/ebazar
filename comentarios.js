@@ -1,11 +1,21 @@
 function cargar() {
+    // Cargar parametros del URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    let id = 1;
+    if(urlParams.has("id")) {
+        id = urlParams.get("id");
+    }
+
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "comentarios.json", true);
+    xhr.open("GET", `${serverUrl}/preguntas?id_producto=${id}`, true);
+    //xhr.open("GET", "comentarios.json", true);
 
     xhr.onload = function() {
         if(this.status === 200) {
-            let comentarios = JSON.parse(this.responseText);
+            let comentarios = JSON.parse(this.responseText).data.preguntas;
             console.log(comentarios);
 
             let comentariosSinCDiv = document.getElementById("comentarios_sin_contestar");
