@@ -43,15 +43,15 @@ function cargar() {
 
                     </div>
 
-                    <div class="col-m-3 col-s-5">
+                    <div class="col-m-3 col-s-5" id="botones_${producto.id}">
                         <div id="b_editar">
-                            <a href="editarProducto.html" class="myButtonV">Editar producto</a>
+                            <a href="editarProducto.html?id=${producto.id}" class="myButtonV">Editar producto</a>
                         </div>
                         <div id="b_comentarios">
                             <a href="comentarios.html?id=${producto.id}" class="myButtonV">Ver Preguntas</a>
                         </div>
                         <div id="b_eleminar">
-                            <a href="#" class="myButtonR">Eliminar</a>
+                            <div onclick="eliminarProducto(${producto.id})" class="myButtonR">Eliminar</div>
                         </div>
                     </div>
                 </div>
@@ -70,4 +70,34 @@ function cargar() {
     }
 
     xhr.send();
+}
+
+function eliminarProducto(id) {
+    console.log(id);
+
+    var r = confirm("Seguro que quieres borrar el producto");
+
+    if(r == true) {
+        let botones = document.getElementById(`botones_${id}`);
+        botones.innerHTML = '<div class="loader"></div>';
+
+        // Realiza la peticion de borrar producto
+        // Hace el post
+        const xhr = new XMLHttpRequest();
+        xhr.open("DELETE", `${serverUrl}/productos?producto_id=${id}`, true);
+        xhr.onload = function() {
+            if(this.status === 200) {
+                let data = JSON.parse(this.responseText);
+                cargar();
+                console.log(data);
+            } else {
+                alert("Algo salio mal al borrar la pregunta, vuelve a intentar.");
+                cargar();
+                console.log(this.status);
+                console.log(this.responseText);
+            }
+        }
+
+        xhr.send();
+    }
 }

@@ -9,6 +9,7 @@
     <title>Editar producto</title>
 </head>
 <body class="m-0" onload="cargar();">
+    <script src="server.js"></script>
     <script src="editarProducto.js"></script>
 
     <div class="row">
@@ -58,10 +59,23 @@
             <form class="contendor_propiedades">
                 <div class="propiedad sin_linea">
                     <div class="propiedad_titulo">
-                        Nombre de producto
+                        Titulo de producto
                     </div>
                     <div class="contenedor_input">
-                        <input id="producto_nombre" value="Lorem ipsum dolor sit amet." type="text" class="input_nombre" placeholder="Ej. Monitor gamer">
+                        <input id="i_titulo" type="text" class="input_nombre" placeholder="Ej. Monitor gamer">
+                    </div>
+                </div>
+
+                <div class="propiedad">
+                    <div class="propiedad_titulo">
+                        Departamento
+                    </div>
+                    <div class="contenedor_input">
+                        <select id="i_departamento" name="departamento">
+                            <option value="1">Electronica</option>
+                            <option value="2">Libros</option>
+                            <option value="3">Muebles</option>
+                        </select>
                     </div>
                 </div>
 
@@ -70,8 +84,7 @@
                         Descripción basica
                     </div>
                     <div class="contenedor_input">
-                        <input id="producto_descripcion_basica" value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis." 
-                        type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
+                        <input id="i_descripcion_corta" type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
                     </div>
                 </div>
 
@@ -80,8 +93,7 @@
                         Descripción completa
                     </div>
                     <div class="contenedor_input">
-                        <input id="producto_descripcion_completa" value="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio alias totam ad iste recusandae neque deserunt quis, architecto magnam sapiente consectetur, quos magni nobis tempore corrupti inventore quibusdam doloribus animi veniam. Et accusamus perspiciatis, at nemo ullam repellat nisi, laborum corporis velit, fugiat expedita corrupti eaque similique cum ea voluptates necessitatibus eveniet! Dolor modi itaque temporibus, tempore commodi minima adipisci inventore quasi optio neque, vel, corrupti recusandae doloremque architecto eum." 
-                        type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
+                        <input id="i_descripcion_larga" type="text" class="input_nombre" placeholder="Ej. Monitor Full HD especializado para...">
                     </div>
                 </div>
 
@@ -90,8 +102,7 @@
                         Ubicación
                     </div>
                     <div class="contenedor_input">
-                        <input id="producto_ubicacion" value="San Luis Potosi"
-                        type="text" class="input_nombre" placeholder="Ej. San Luis Potosi">
+                        <input id="i_ubicacion" type="text" class="input_nombre" placeholder="Ej. San Luis Potosi">
                     </div>
                 </div>
 
@@ -100,10 +111,21 @@
                         Precio
                     </div>
                     <div class="contenedor_input">
-                        <input id="producto_precio" value="540" type="text" class="input_precio" placeholder="100">
+                        <input id="i_precio" type="number" class="input_precio" placeholder=100>
                         <span>MXN</span>
                     </div>
                 </div>
+
+                <div class="propiedad">
+                    <div class="propiedad_titulo">
+                        Disponibles
+                    </div>
+                    <div class="contenedor_input">
+                        <input id="i_disponibles" type="number" class="input_precio" placeholder=1>
+                    </div>
+                </div>
+
+                <!--
 
                 <div class="propiedad">
                     <div class="propiedad_titulo">
@@ -113,7 +135,7 @@
                         <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)">
                         <br>
                         <div class="mas_img">
-                            <img id="mainImg" src="https://picsum.photos/200/200" alt="">
+                            <img id="mainImg" src="noimg.png" alt="">
 
                         </div>
                     </div>
@@ -129,17 +151,19 @@
                         <br>
                         <div class="mas_img">
                             <div class="img_p">
-                                <img src="https://picsum.photos/200/200" alt="">
+                                <img src="noimg.png" alt="">
                             </div>
                             <div class="img_p">
-                                <img src="https://picsum.photos/200/200" alt="">
+                                <img src="noimg.png" alt="">
                             </div>
                             <div class="img_p">
-                                <img src="https://picsum.photos/200/200" alt="">
+                                <img src="noimg.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
+
+                -->
 
                 <div class="propiedad">
                     <div class="propiedad_titulo">
@@ -154,19 +178,16 @@
                         </div>
 
                         <div id="contendor_caracteristicas">
-                            <!--
                             <div id="caracteristicas">
-                                <div class="col-6">
-                                    <input value="Color"
-                                    type="text" class="input_caractersitica" placeholder="Ej. Color">
-
-                                </div>
-                                <div class="col-6">
-                                    <input value="Rojo"
-                                    type="text" class="input_caractersitica" placeholder="Ej. Rojo">
+                                <div>
+                                    <div class="col-6">
+                                        <input id="i_c_1" type="text" class="input_caractersitica" placeholder="Ej. Color">
+                                    </div>
+                                    <div class="col-6">
+                                        <input id="i_v_1" type="text" class="input_caractersitica" placeholder="Ej. Rojo">
+                                    </div>
                                 </div>
                             </div>
-                            -->
                         </div>
 
                         <div class="col-12 caracteristica_mas" onclick="agregarCarac();">
@@ -174,15 +195,16 @@
                         </div>
 
                         <div class="col-12" style="padding-bottom: 5em;">
-
+                            
                         </div>
                     </div>
                 </div>
 
                 <div id="b_vender">
-                    <a href="#" class="myButton">Guardar cambios</a>
+                    <div class="myButton" onclick="actualizarProducto();">Actualizar producto</div>
                 </div>
 
+            </div>
             </div>
         </div>
     </div>

@@ -23,9 +23,9 @@
                 <div class="row">
                     <div class="contendor_search">
                         <div class="col-m-10 col-s-11">
-                            <input type="text" placeholder="Ej. Monitores gamers" class="search2">  
+                            <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                         </div>
-                        <div class="col-m-2 col-s-1 search_icon" onclick="window.location.href = 'buscar.html'">
+                        <div class="col-m-2 col-s-1 search_icon" onclick="window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`">
                             <img class="img_search" align="middle" src="search.png" alt="" srcset="">
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         -->
                     </div>
                     <div id="b_comprar">
-                        <a href="carrito.html" class="myButton">Comprar</a>
+                        <div onclick="comprar()" class="myButton">Comprar</div>
                     </div>
                     
                 </div>
@@ -144,6 +144,12 @@
                                 <div class="comment_texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, officia assumenda. Nesciunt est repellat et ea fuga voluptates, repudiandae distinctio quidem libero magni. Totam dignissimos iste accusantium deleniti, quam commodi!</div>
                             </div>
                             -->
+                        </div>
+                        <div class="respuesta">
+                            <input type="text" name="" id="pregunta_input" placeholder="Pregunta aqui!">
+                            <div id="b_pregunta">
+                                <div onclick="pregunta()" class="myButtonV">Enviar</div>
+                            </div>
                         </div>
                     </div>
                 </div>

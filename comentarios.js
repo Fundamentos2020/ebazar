@@ -32,17 +32,17 @@ function cargar() {
                                 <div class="texto_titulo">${comentario.pregunta}</div>
                                 <div class="texto_caracterisitica"> ${comentario.fechaPregunta}</div>
                                 <div class="respuesta">
-                                    <span>Respuesta: </span><input type="text" name="" id="respuesta_input">
+                                    <span>Respuesta: </span><input type="text" name="" id="${comentario.id}_respuesta_input" class="respuesta_input">
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <div id="b_eleminar">
+                                <div id="b_eleminar_${comentario.id}" class="b_eleminar">
                                     <div style="padding: 0.5em 0.5em;">
-                                        <a href="#" class="myButtonR">Eliminar</a>
+                                        <div onclick="borrarPregunta(${comentario.id})" class="myButtonR">Eliminar</div>
                                     </div>
                                     <div style="padding: 0.5em 0.5em;">
-                                        <a href="#" class="myButtonV">Enviar</a>                            
+                                        <div onclick="contestarPregunta(${comentario.id})" class="myButtonV">Enviar</div>                            
                                     </div>
                                 </div>
                             </div>
@@ -57,18 +57,97 @@ function cargar() {
                                 <div class="texto_respuesta">${comentario.respuesta}</div>
                             </div>
                             <div class="col-12">
-                                <div id="b_eleminar">
-                                    <a href="#" class="myButtonR">Eliminar</a>
+                                <div id="b_eleminar_${comentario.id}" class="b_eleminar">
+                                    <div onclick="borrarPregunta(${comentario.id})" class="myButtonR">Eliminar</div>
                                 </div>
                             </div>
                         </div>
                     `;
                 }
             });
+
+            if(comentariosSinCHtml == "") {
+                comentariosSinCHtml = `
+                <div class="texto_titulo centro"> No hay preguntas.</div>
+                `;
+            }
+
+            if(comentariosContestadosHtml == "") {
+                comentariosContestadosHtml = `
+                    <div class="texto_titulo centro"> No hay preguntas.</div>
+                `;
+            }
+
             comentariosSinCDiv.innerHTML = comentariosSinCHtml;
             comentariosContestadosDiv.innerHTML = comentariosContestadosHtml;
         }
     }
 
     xhr.send();
+}
+
+function contestarPregunta(id) {
+    let respuesta = document.getElementById(`${id}_respuesta_input`).value;
+    console.log(respuesta);
+
+    if(respuesta == "") {
+        alert("La respuesta no puede estar vacia");
+    } else {
+        let botones = document.getElementById(`b_eleminar_${id}`);
+        botones.innerHTML = '<div class="loader"></div>';
+2
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + ' ' + today.getHours()+':'+today.getMinutes();
+        
+        const data = {
+            respuesta: respuesta,
+            fecha: date
+        }
+
+        //console.log(data);
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("PATCH", `${serverUrl}/preguntas?id_pregunta=${id}`, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if(this.status === 200) {
+                let data = JSON.parse(this.responseText);
+                console.log(data);
+                cargar();
+            } else {
+                alert("Algo salio mal al borrar la pregunta, vuelve a intentar.");
+                cargar();
+                console.log(this.status);
+                console.log(this.responseText);
+            }
+        }
+        xhr.send(JSON.stringify(data));
+    }
+}
+
+function borrarPregunta(id) {
+    console.log(id);
+    var r = confirm("Seguro que quieres borrar la pregunta?");
+
+    if(r == true) {
+        let botones = document.getElementById(`b_eleminar_${id}`);
+        botones.innerHTML = '<div class="loader"></div>';
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("DELETE", `${serverUrl}/preguntas?id_pregunta=${id}`, true);
+        xhr.onload = function() {
+            if(this.status === 200) {
+                let data = JSON.parse(this.responseText);
+                cargar();
+                console.log(data);
+            } else {
+                alert("Algo salio mal al borrar la pregunta, vuelve a intentar.");
+                cargar();
+                console.log(this.status);
+                console.log(this.responseText);
+            }
+        }
+        xhr.send();
+    }
 }

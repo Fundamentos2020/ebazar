@@ -129,7 +129,7 @@ body {
     padding: 1em;
 }
 
-#respuesta_input {
+.respuesta_input {
     padding: 1em;
     font-size: medium;
     height: 50px;
@@ -156,7 +156,7 @@ body {
     text-align: left;
 }
 
-#b_eleminar {
+.b_eleminar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -208,4 +208,24 @@ body {
 .myButtonV:active {
 	position:relative;
 	top:1px;
+}
+
+.loader {
+    display:inline-block;
+
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.centro {
+    text-align: center;
 }

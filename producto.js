@@ -1,11 +1,12 @@
+let id = 1;
+
 function cargar() {
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    let id = 1;
     if(urlParams.has("id")) {
-        id = urlParams.get("id");
+        id = parseInt(urlParams.get("id"));
     }
 
     const xhr = new XMLHttpRequest();
@@ -59,6 +60,9 @@ function cargar() {
                 `;
             }
             producto.preguntas.forEach(pregunta => {
+                if(pregunta.respuesta === null) {
+                    pregunta.respuesta = "Sin respuesta";
+                }
                 p += `
                     <div class="comment_box">
                         <div class="comment_titulo">
@@ -84,6 +88,85 @@ function cargar() {
     }
 
     xhr.send();
+}
+
+function pregunta() {
+    let pregunta = document.getElementById('pregunta_input').value;
+    if(pregunta == '') {
+        alert("Pregunta no valida");
+    } else {
+        let boton = document.getElementById('b_pregunta');
+        boton.innerHTML = '<div class="loader"></div>';
+
+        // Se debe de obtener de alguna manera
+        let id_usuario = 1;
+
+        var today = new Date();
+        var fecha = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + ' ' + today.getHours()+':'+today.getMinutes();
+
+        const data = {
+            id_usuario,
+            id_producto: id,
+            pregunta,
+            fecha
+        };
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("POST", `${serverUrl}/preguntas`, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if(this.status === 201) {
+                let data = JSON.parse(this.responseText);
+                console.log(data);
+                cargar();
+                document.getElementById('pregunta_input').value = "";
+                boton.innerHTML = '<div onclick="pregunta()" class="myButtonV">Enviar</div>';
+            } else {
+                alert("Algo salio mal al realizar la pregunta, vuelve a intentar.");
+                cargar();
+                console.log(this.status);
+                console.log(this.responseText);
+            }
+        }
+        xhr.send(JSON.stringify(data));
+    }
+}
+
+function comprar() {
+    let boton = document.getElementById('b_comprar');
+    boton.innerHTML = '<div class="loader"></div>';
+
+    // Se debe de obtener de alguna manera
+    let id_usuario = 1;
+
+    const data = {
+        id_usuario,
+        id_producto: id,
+        cantidad: 1
+    };
+
+    console.log(data);
+
+    // POST 
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `${serverUrl}/carrito`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function() {
+        if(this.status === 201) {
+            let data = JSON.parse(this.responseText);
+            console.log(data);
+            window.location.href = `carrito.html?id=${id_usuario}`;
+        } else {
+            alert("Algo salio mal al comprar el producto, vuelve a intentar.");
+            cargar();
+            console.log(this.status);
+            console.log(this.responseText);
+
+            boton.innerHTML = '<div onclick="comprar()" class="myButton">Comprar</div>';
+        }
+    }
+    xhr.send(JSON.stringify(data));
 }
 
 function ClickImgsProducto(e) {

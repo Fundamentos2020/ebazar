@@ -1,9 +1,10 @@
+let id = 1;
+
 function cargar() {
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    let id = 1;
     if(urlParams.has("id")) {
         id = urlParams.get("id");
     }
@@ -62,5 +63,30 @@ function cargar() {
         }
     }
 
+    xhr.send();
+}
+
+function finalizarCompra() {
+    let boton = document.getElementById('b_comprar');
+    boton.innerHTML = '<div class="loader"></div>';
+
+    // PATCH 
+    const xhr = new XMLHttpRequest();
+    xhr.open("PATCH", `${serverUrl}/carrito?id_usuario=${id}`, true);
+    xhr.onload = function() {
+        if(this.status === 200) {
+            let data = JSON.parse(this.responseText);
+            console.log(data);
+            cargar();
+            alert("Compra finalizada");
+        } else {
+            alert("Algo salio mal al finalizar la compra, vuelve a intentar.");
+            cargar();
+            console.log(this.status);
+            console.log(this.responseText);
+
+            boton.innerHTML = '<div onclick="comprar()" class="myButton">Comprar</div>';
+        }
+    }
     xhr.send();
 }

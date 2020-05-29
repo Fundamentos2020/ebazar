@@ -360,4 +360,62 @@ body {
 
 .m-0{margin:0;}
 
+#pregunta_input {
+    padding: 1em;
+    font-size: medium;
+    height: 20px;
+    width: 100%;
+}
+
+#b_pregunta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+    text-align: center;
+}
+
+
+.myButtonV {
+	background-color:#44c767;
+	border-radius:10px;
+	border:1px solid #ffffff00;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:12px 34px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButtonV:hover {
+	background-color:#5cbf2a;
+}
+
+.myButtonV:active {
+	position:relative;
+	top:1px;
+}
+
+
+.respuesta {
+    padding: 1em;
+}
         
+.loader {
+    display:inline-block;
+
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
