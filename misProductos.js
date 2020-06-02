@@ -66,6 +66,8 @@ function cargar() {
                 </div>
                 `;
             productosDiv.innerHTML = productosHtml;
+        } else {
+            console.log(JSON.parse(this.responseText));
         }
     }
 

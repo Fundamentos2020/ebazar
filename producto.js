@@ -84,6 +84,8 @@ function cargar() {
                     <h1>404 Not Found</h1>
                 </div>
             `;
+        } else {
+            console.log(this.responseText);
         }
     }
 
