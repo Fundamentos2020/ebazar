@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="miCuenta.css" type="text/css">
+    <title>Registrarse</title>
+</head>
+<body class="m-0">
+    <!----Sección del encabezado de la página--->
+    <div class="row color-Search">
+        <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
+            <a href="inicio.html" style="text-decoration: none;">
+                <h1>eBazar</h1>
+            </a>
+        </div>
+        <div class="col-m-4 col-s-8 pS">
+            <div class="row">
+                <div class="contendor_search">
+                    <div class="col-m-10 col-s-11">
+                        <input type="text" placeholder="Ej. Monitores gamers" class="search2">  
+                    </div>
+                    <div class="col-m-2 col-s-1 search_icon" onclick="window.location.href = 'buscar.html'">
+                        <img class="img_search" align="middle" src="search.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>                
+        </div>
+    </div>
+    <!----Sección del menú de la página--->
+    <div id="preMenu">
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
+
+        <div class="menuV2 font-2">
+            <ul class="font-2">
+                <li onclick="window.location.href = 'inicio.html'">Inicio</li>
+                <li onclick="window.location.href = 'catProductos.html'">Productos</li>
+                <li onclick="window.location.href = 'misProductos.html'">Vender</li>
+                <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
+                <li onclick="window.location.href = 'miCuenta.html'">Mi cuenta</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="p-c color-Contenedor">
+
+        <div class="row p-c contenedor_producto">
+            <div class="col-m-12 col-s-12 ">
+                 <h2 class="p-1 bb-1 font-Header">Registrarse</h2>
+             </div>
+             <!--Foto del usuario-->
+             <div class="row">
+                <div class="col-m-3 col-s-12">
+                    <div class="m-2">
+                        <div class="flex" id="foto">
+                        
+                        </div>
+                        <br>
+                        <div>
+                            <button  class="botonRedondo color-Search font-campos">Seleccionar imagen</button>
+                        </div>
+                    </div>         
+                </div>
+                <!--Datos del Usuario-->
+                <form class="col-m-9 col-s-12 bl-1">
+                    <div class="font-campos p-2 text-bold">
+                        Username
+                        <br>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                    </div>
+                    <div class="font-campos p-2 text-bold">
+                        Nombre
+                        <br>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                    </div>
+                    <div class="font-campos p-2 text-bold">
+                        Dirección
+                        <br>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                       
+                    </div>
+                    <div class="font-campos p-2 text-bold">
+                       Teléfono
+                       <br>
+                       <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                      
+                    </div>
+                    <div class="font-campos p-2 text-bold"> 
+                        E-mail
+                        <br>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                    </div>
+                    <div class="font-campos p-2 text-bold"> 
+                        Contraseña
+                        <br>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                    </div>
+                    <div class="font-campos p-2 text-bold"> 
+                        Tipo de Cuenta:
+                        <br>
+                        <input type="radio" id = "vendedor">
+                        <label for="vendedor">Vendedor</label>
+                        <br>
+                        <input type="radio" id = "comprador">
+                        <label for="comprador">Comprador</label>
+                        <br>
+                        <input type="radio" id ="administrador">
+                        <label for="administrador">Administrador</label>
+                        <br>
+                    </div>
+                </form>
+                <div>
+                    <button class="botonRedondo color-gris text-white font-campos float-r m-b">Cancelar</button>
+                    <button class="botonRedondo color-Search font-campos float-r m-b">Continuar</button>
+                </div>
+             </div>
+        </div>
+    </div>
+   
+
+    <div class = "text-center color-Search">
+        <div class = "text-center color-3">
+            <div style="padding: 1em;">
+                <a href="faq.html" style="color: white; padding: 0em 1em;">FAQ</a>
+                <a href="terminos.html" style="color: white; padding: 0em 1em">Terminos y condiciones</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

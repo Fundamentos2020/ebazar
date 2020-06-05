@@ -46,25 +46,23 @@
         </div>
     <div>
 
-    <div class="row color-Banner hg">
+    <form class="row color-Banner hg">
         <div class="col-m-4 col-s-12 m-contenedor borde-0 color-blancoF">
             <h2 class="p-1">Log in</h2>
             <div class="mb-4 p-1">
                 <span>Username:</span>
-                <input type="text" placeholder="Nombre de Usuario">
+                <input type="text" placeholder="Nombre de Usuario" id="username">
             </div>
             <div class="mb-4 p-1">
                 <span>Password: </span>
-                <input type="text" placeholder="*********">
-                <br>
-                <span class="m-1">¿Olvidaste tu contraseña?</span>
+                <input type="text" placeholder="*********" id="password">
             </div>
-            <span class="m-2 p-1">¿No tienes cuenta? <a href="google.com"> Registrate</a></span>   
-            <button class="botonRedondo color-Banner text-white float-r m-b" onclick="window.location.href = 'inicio.html'">Continuar</button> 
-            
+            <span class="m-1">¿Olvidaste tu contraseña?</span>
+            <span class="m-2 p-1">¿No tienes cuenta? <a href="registro.html"> Registrate</a></span>   
+            <button class="botonRedondo color-Banner text-white float-r m-b" id="login">Iniciar Sesión</button>     
         </div>
-        <div></div>
-    </div>
+    </form>
+
     <div class="text-center color-Banner h">
         <div class = "text-center color-3">
             <div style="padding: 1em;">
@@ -73,5 +71,8 @@
             </div>
         </div>
     </div>
+
+    <script src="login.js"></script>
+    <script src="consulta.js"></script>
 </body>
 </html>
