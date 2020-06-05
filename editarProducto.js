@@ -2,6 +2,11 @@ let id = 13;
 let numCaracteristicas = 0;
 
 function cargar() {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -13,6 +18,7 @@ function cargar() {
     const xhr = new XMLHttpRequest();
 
     xhr.open("GET", `${serverUrl}/productos?producto_id=${id}`, true);
+    xhr.setRequestHeader("Authorization", session.token_acceso);
 
     //xhr.open("GET", "editarProducto.json", true);
 
@@ -71,7 +77,11 @@ function cargar() {
 
 function actualizarProducto() {
     // 
-    let id_usuario = 1;
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+    let id_usuario = session.id_usuario;
 
     // Obtiene los datos del producto
     let data = {
@@ -111,6 +121,7 @@ function actualizarProducto() {
         // Hace el post
         const xhr = new XMLHttpRequest();
         xhr.open("PATCH", `${serverUrl}/productos?producto_id=${id}`, true);
+        xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
             if (this.status === 200) {
@@ -118,6 +129,26 @@ function actualizarProducto() {
                 let id = res.data.productos[0].id;
                 console.log(id);
                 window.location.href = `producto.html?id=${id}`;
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
             } else {
                 console.log(this.status);
                 console.log(this.responseText)

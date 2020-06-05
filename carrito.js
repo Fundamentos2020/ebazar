@@ -1,18 +1,17 @@
-let id = 1;
+let id;
 
 function cargar() {
-    // Cargar parametros del URL
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    if(urlParams.has("id")) {
-        id = urlParams.get("id");
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
     }
+
+    id = session.id_usuario;
 
     const xhr = new XMLHttpRequest();
 
     xhr.open("GET", `${serverUrl}/carrito?id_usuario=${id}`, true);
-
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "carrito.json", true);
 
     xhr.onload = function() {
@@ -60,6 +59,16 @@ function cargar() {
                     </div>
                 `;
             }
+        } else if(this.status == 401) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
+                refreshToken();
+                //window.location.reload();
+            } else {
+                window.location.href = loginPage;
+            }
         }
     }
 
@@ -67,18 +76,34 @@ function cargar() {
 }
 
 function finalizarCompra() {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+    
     let boton = document.getElementById('b_comprar');
     boton.innerHTML = '<div class="loader"></div>';
 
     // PATCH 
     const xhr = new XMLHttpRequest();
     xhr.open("PATCH", `${serverUrl}/carrito?id_usuario=${id}`, true);
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     xhr.onload = function() {
         if(this.status === 200) {
             let data = JSON.parse(this.responseText);
             console.log(data);
             cargar();
             alert("Compra finalizada");
+        } else if(this.status == 401) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
+                refreshToken();
+                //window.location.reload();
+            } else {
+                window.location.href = loginPage;
+            }
         } else {
             alert("Algo salio mal al finalizar la compra, vuelve a intentar.");
             cargar();

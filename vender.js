@@ -26,7 +26,12 @@ function agregarCarac() {
 
 function publicarProducto() {
     // 
-    let id_usuario = 1;
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
+    let id_usuario = session.id_usuario;
 
     // Obtiene los datos del producto
     let data = {
@@ -67,11 +72,22 @@ function publicarProducto() {
         const xhr = new XMLHttpRequest();
         xhr.open("POST", `${serverUrl}/productos`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
             if(this.status === 201) {
                 let id = JSON.parse(this.responseText).data.producto.id;
                 console.log(id);
                 window.location.href = `producto.html?id=${id}`;
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
             } else {
                 console.log(this.status);
                 console.log(this.responseText)

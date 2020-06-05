@@ -1,4 +1,9 @@
 function cargar() {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -11,6 +16,7 @@ function cargar() {
     const xhr = new XMLHttpRequest();
 
     xhr.open("GET", `${serverUrl}/preguntas?id_producto=${id}`, true);
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "comentarios.json", true);
 
     xhr.onload = function() {
@@ -80,6 +86,16 @@ function cargar() {
 
             comentariosSinCDiv.innerHTML = comentariosSinCHtml;
             comentariosContestadosDiv.innerHTML = comentariosContestadosHtml;
+        } else if(this.status == 401) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
+                refreshToken();
+                //window.location.reload();
+            } else {
+                window.location.href = loginPage;
+            }
         }
     }
 
@@ -93,6 +109,11 @@ function contestarPregunta(id) {
     if(respuesta == "") {
         alert("La respuesta no puede estar vacia");
     } else {
+        var session = getSesion();
+        if(session == null) {
+            window.location.href = loginPage;
+        }
+
         let botones = document.getElementById(`b_eleminar_${id}`);
         botones.innerHTML = '<div class="loader"></div>';
 2
@@ -110,11 +131,22 @@ function contestarPregunta(id) {
 
         xhr.open("PATCH", `${serverUrl}/preguntas?id_pregunta=${id}`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
             if(this.status === 200) {
                 let data = JSON.parse(this.responseText);
                 console.log(data);
                 cargar();
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
             } else {
                 alert("Algo salio mal al borrar la pregunta, vuelve a intentar.");
                 cargar();
@@ -131,16 +163,32 @@ function borrarPregunta(id) {
     var r = confirm("Seguro que quieres borrar la pregunta?");
 
     if(r == true) {
+        var session = getSesion();
+        if(session == null) {
+            window.location.href = loginPage;
+        }
+
         let botones = document.getElementById(`b_eleminar_${id}`);
         botones.innerHTML = '<div class="loader"></div>';
 
         const xhr = new XMLHttpRequest();
         xhr.open("DELETE", `${serverUrl}/preguntas?id_pregunta=${id}`, true);
+        xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
             if(this.status === 200) {
                 let data = JSON.parse(this.responseText);
                 cargar();
                 console.log(data);
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
             } else {
                 alert("Algo salio mal al borrar la pregunta, vuelve a intentar.");
                 cargar();

@@ -1,5 +1,5 @@
-const api = "http://localhost:80/ebazar-back/";
-const client = "http://localhost:80/ebazar/";
+const api = "http://localhost:8080/ebazar-back/";
+const client = "inicio.html";
 
 function getSesion() {
     var sesion = localStorage.getItem("lusuarios_sesion");
@@ -19,6 +19,7 @@ function refreshToken() {
 
     if (sesion == null) {
         window.location.href = client;
+        return;
     }
 
     var xhttp = new XMLHttpRequest();

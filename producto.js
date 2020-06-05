@@ -1,6 +1,11 @@
 let id = 1;
 
 function cargar() {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -12,12 +17,14 @@ function cargar() {
     const xhr = new XMLHttpRequest();
 
     xhr.open("GET", `${serverUrl}/productos?producto_id=${id}`, true);
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "producto.json", true);
 
     xhr.onload = function() {
         if(this.status === 200) {
+            console.log(this.responseText);
+
             let producto = JSON.parse(this.responseText).data.producto;
-            console.log(producto);
 
             // Carga los valores del producto
             let titulo = document.getElementById("p_titulo");
@@ -84,6 +91,16 @@ function cargar() {
                     <h1>404 Not Found</h1>
                 </div>
             `;
+        } else if(this.status == 401) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
+                refreshToken();
+                //window.location.reload();
+            } else {
+                window.location.href = loginPage;
+            }
         } else {
             console.log(this.responseText);
         }
@@ -100,8 +117,12 @@ function pregunta() {
         let boton = document.getElementById('b_pregunta');
         boton.innerHTML = '<div class="loader"></div>';
 
-        // Se debe de obtener de alguna manera
-        let id_usuario = 1;
+        var session = getSesion();
+        if(session == null) {
+            window.location.href = loginPage;
+        }
+    
+        let id_usuario = session.id_usuario;
 
         var today = new Date();
         var fecha = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + ' ' + today.getHours()+':'+today.getMinutes();
@@ -117,6 +138,7 @@ function pregunta() {
 
         xhr.open("POST", `${serverUrl}/preguntas`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
             if(this.status === 201) {
                 let data = JSON.parse(this.responseText);
@@ -124,6 +146,16 @@ function pregunta() {
                 cargar();
                 document.getElementById('pregunta_input').value = "";
                 boton.innerHTML = '<div onclick="pregunta()" class="myButtonV">Enviar</div>';
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
             } else {
                 alert("Algo salio mal al realizar la pregunta, vuelve a intentar.");
                 cargar();
@@ -139,8 +171,12 @@ function comprar() {
     let boton = document.getElementById('b_comprar');
     boton.innerHTML = '<div class="loader"></div>';
 
-    // Se debe de obtener de alguna manera
-    let id_usuario = 1;
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+    
+    let id_usuario = session.id_usuario;
 
     const data = {
         id_usuario,
@@ -154,11 +190,22 @@ function comprar() {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", `${serverUrl}/carrito`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     xhr.onload = function() {
         if(this.status === 201) {
             let data = JSON.parse(this.responseText);
             console.log(data);
             window.location.href = `carrito.html?id=${id_usuario}`;
+        } else if(this.status == 401) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
+                refreshToken();
+                //window.location.reload();
+            } else {
+                window.location.href = loginPage;
+            }
         } else {
             alert("Algo salio mal al comprar el producto, vuelve a intentar.");
             cargar();

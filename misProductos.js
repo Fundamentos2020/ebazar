@@ -1,16 +1,18 @@
 function cargar() {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
+    let id = session.id_usuario;
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    let id = 1;
-    if(urlParams.has("id")) {
-        id = urlParams.get("id");
-    }
-
     const xhr = new XMLHttpRequest();
 
     xhr.open("GET", `${serverUrl}/productos?id_vendedor=${id}`, true);
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "misProductos.json", true);
 
     xhr.onload = function() {
@@ -66,6 +68,17 @@ function cargar() {
                 </div>
                 `;
             productosDiv.innerHTML = productosHtml;
+        } else if(this.status == 401) {
+            console.log(this.responseText);
+            //var data = JSON.parse(this.responseText);
+
+            //if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                //console.log(data);
+                refreshToken();
+                //window.location.reload();
+            //} else {
+            //    window.location.href = loginPage;
+            //}
         } else {
             console.log(JSON.parse(this.responseText));
         }
@@ -75,6 +88,11 @@ function cargar() {
 }
 
 function eliminarProducto(id) {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
     console.log(id);
 
     var r = confirm("Seguro que quieres borrar el producto");
@@ -87,13 +105,24 @@ function eliminarProducto(id) {
         // Hace el post
         const xhr = new XMLHttpRequest();
         xhr.open("DELETE", `${serverUrl}/productos?producto_id=${id}`, true);
+        xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
             if(this.status === 200) {
                 let data = JSON.parse(this.responseText);
                 cargar();
                 console.log(data);
+            } else if(this.status == 401) {
+                var data = JSON.parse(this.responseText);
+    
+                if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                    console.log(data);
+                    refreshToken();
+                    //window.location.reload();
+                } else {
+                    window.location.href = loginPage;
+                }
             } else {
-                alert("Algo salio mal al borrar la pregunta, vuelve a intentar.");
+                alert("Algo salio mal al borrar el producto, vuelve a intentar.");
                 cargar();
                 console.log(this.status);
                 console.log(this.responseText);

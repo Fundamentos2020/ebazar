@@ -1,4 +1,9 @@
 function cargar() {
+    var session = getSesion();
+    if(session == null) {
+        window.location.href = loginPage;
+    }
+
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -8,9 +13,15 @@ function cargar() {
         titulo = urlParams.get("titulo");
     }
 
+    let pag = 1;
+    if(urlParams.has("pag")) {
+        pag = urlParams.get("pag");
+    }
+
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `${serverUrl}/buscar?titulo=${titulo}`, true);
+    xhr.open("GET", `${serverUrl}/buscar?titulo=${titulo}&pag=${pag}`, true);
+    xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "buscar.json", true);
 
     xhr.onload = function() {
@@ -19,8 +30,8 @@ function cargar() {
             console.log(resultadoBusqueda);
 
             // Carga los valores del producto
-            let titulo = document.getElementById("texto_res");
-            titulo.innerText = `${resultadoBusqueda.resultados} de ${resultadoBusqueda.totalResultados} resultados para "${resultadoBusqueda.consulta}"`;
+            let tituloD = document.getElementById("texto_res");
+            tituloD.innerText = `${resultadoBusqueda.resultados} de ${resultadoBusqueda.totalResultados} resultados para "${resultadoBusqueda.consulta}"`;
 
             let productos = document.getElementById("productos");
             let productosHtml = "";
@@ -52,17 +63,27 @@ function cargar() {
             p = "";
             for (let i = 1; i <= resultadoBusqueda.totalPaginas; i++) {
                 if(i == resultadoBusqueda.pagina) {
-                    p += `<div class="pagina pagina_actual"><a href="buscar.html">${i}</a></div>`;
+                    p += `<div class="pagina pagina_actual"><a href="buscar.html?pag=${i}&titulo=${titulo}">${i}</a></div>`;
                 } else {
-                    p += `<div class="pagina"><a href="buscar.html">${i}</a></div>`;
+                    p += `<div class="pagina"><a href="buscar.html?pag=${i}&titulo=${titulo}">${i}</a></div>`;
                 }
                 
             }
 
-            if(resultadoBusqueda.totalPaginas > 1)
-                p += `<div class="pagina"><a href="buscar.html">Siguiente ></a></div>`;
+            if(resultadoBusqueda.totalPaginas > 1 && resultadoBusqueda.pagina < resultadoBusqueda.totalPaginas)
+                p += `<div class="pagina"><a href="buscar.html?pag=${parseInt(resultadoBusqueda.pagina)+1}&titulo=${titulo}">Siguiente ></a></div>`;
 
             paginas.innerHTML = p;
+        } else if(this.status == 401) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
+                refreshToken();
+                //window.location.reload();
+            } else {
+                window.location.href = loginPage;
+            }
         }
     }
 

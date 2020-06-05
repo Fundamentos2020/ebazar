@@ -23,9 +23,9 @@
                 <div class="row">
                     <div class="contendor_search">
                         <div class="col-m-10 col-s-11">
-                            <input type="text" placeholder="Ej. Monitores gamers" class="search2">  
+                            <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                         </div>
-                        <div class="col-m-2 col-s-1 search_icon" onclick="window.location.href = 'buscar.html'">
+                        <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
                             <img class="img_search" align="middle" src="search.png" alt="" srcset="">
                         </div>
                     </div>

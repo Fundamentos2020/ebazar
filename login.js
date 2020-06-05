@@ -48,6 +48,6 @@ function documentListo() {
     var sesion = getSesion();
 
     if (sesion != null && Number.isInteger(sesion.id_sesion)) {    
-        window.location.href = client + "inicio.html";
+        window.location.href = client //+ "inicio.html";
     }
 }
