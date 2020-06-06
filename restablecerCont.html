@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="catProducto.css">
     <link rel="stylesheet" href="login.css">
-    
-    <title>Log In</title>
+    <title>Restablecer Contraseña</title>
 </head>
 <body class="m-0">
-    <!----Sección del encabezado de la página--->
+     <!----Sección del encabezado de la página--->
     <div class="row color-Banner text-white">
         <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
             <a href="inicio.html" style="text-decoration: none;">
@@ -29,36 +28,20 @@
             </div>                
         </div>
     </div>
-    <!----Sección del menú de la página--->
-    <div id="preMenu">
-        <input type="checkbox" id="btn-menu">
-        <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
+    
 
-        <div class="menuV2 ">
-            <ul class="font-menu">
-                <li onclick="window.location.href = 'inicio.html'">Inicio</li>
-                <li onclick="window.location.href = 'catProductos.html'">Productos</li>
-                <li onclick="window.location.href = 'misProductos.html'">Vender</li>
-                <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
-                <li onclick="window.location.href = 'miCuenta.html'">Mi cuenta</li>
-            </ul>
-        </div>
-    <div>
-
-    <form class="row color-Banner hg">
+    <form class="row hg">
         <div class="col-m-4 col-s-12 m-contenedor borde-0 color-blancoF">
-            <h2 class="p-1">Log in</h2>
+            <h2 class="p-1">Restablecer Contraseña</h2>
             <div class="mb-4 p-1">
-                <span>Username:</span>
+                <span>Nombre de usuario:</span>
                 <input type="text" placeholder="Nombre de Usuario" id="username">
             </div>
             <div class="mb-4 p-1">
-                <span>Password: </span>
+                <span>Contraseña nueva: </span>
                 <input type="text" placeholder="*********" id="password">
             </div>
-            <span class="m-1"><a href="restablecerCont.html">¿Olvidaste tu contraseña? </a></span>
-            <span class="m-2 p-1">¿No tienes cuenta? <a href="registro.html"> Registrate</a></span>   
-            <button class="botonRedondo color-Banner text-white float-r m-b" id="login">Iniciar Sesión</button>     
+            <button class="botonRedondo color-Banner text-white float-r m-b" id="aceptar">Aceptar</button>     
         </div>
     </form>
 
@@ -70,8 +53,5 @@
             </div>
         </div>
     </div>
-
-    <script src="login.js"></script>
-    <script src="consulta.js"></script>
 </body>
 </html>
