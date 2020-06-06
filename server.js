@@ -37,6 +37,7 @@ function refreshToken() {
 
     if (data.success === true){
         localStorage.setItem('lusuarios_sesion', JSON.stringify(data.data));
+        window.location.reload();
         //window.location.href = client;
     }
     else{

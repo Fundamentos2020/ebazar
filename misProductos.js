@@ -70,15 +70,15 @@ function cargar() {
             productosDiv.innerHTML = productosHtml;
         } else if(this.status == 401) {
             console.log(this.responseText);
-            //var data = JSON.parse(this.responseText);
+            var data = JSON.parse(this.responseText);
 
-            //if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
-                //console.log(data);
+            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
+                console.log(data);
                 refreshToken();
                 //window.location.reload();
-            //} else {
-            //    window.location.href = loginPage;
-            //}
+            } else {
+                window.location.href = loginPage;
+            }
         } else {
             console.log(JSON.parse(this.responseText));
         }
