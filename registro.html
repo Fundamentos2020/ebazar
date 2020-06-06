@@ -21,7 +21,7 @@
                         <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                     </div>
                     <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
-                        <img class="img_search" align="middle" src="search.png" alt="" srcset="">
+                        <img class="img_search"  src="search.png" alt="" srcset="">
                     </div>
                 </div>
             </div>                
@@ -53,9 +53,7 @@
              <div class="row">
                 <div class="col-m-3 col-s-12">
                     <div class="m-2">
-                        <div class="flex" id="foto">
-                        
-                        </div>
+                        <div class="flex" id="foto"> </div>
                         <br>
                         <div>
                             <button  class="botonRedondo color-Search font-campos">Seleccionar imagen</button>
@@ -67,52 +65,49 @@
                     <div class="font-campos p-2 text-bold">
                         Username
                         <br>
-                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1" id="nombre_usuario"></input>
                     </div>
                     <div class="font-campos p-2 text-bold">
                         Nombre
                         <br>
-                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1" id="nombre"></input>
                     </div>
                     <div class="font-campos p-2 text-bold">
                         Dirección
                         <br>
-                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
-                       
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1" id="domicilio"></input>
                     </div>
                     <div class="font-campos p-2 text-bold">
                        Teléfono
                        <br>
-                       <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                       <input class="campoRedondo color-contCampo barra text-white font-size-1" id="num_telefono"></input>
                       
                     </div>
                     <div class="font-campos p-2 text-bold"> 
                         E-mail
                         <br>
-                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1" id="email"></input>
                     </div>
                     <div class="font-campos p-2 text-bold"> 
                         Contraseña
                         <br>
-                        <input class="campoRedondo color-contCampo barra text-white font-size-1"></input>
+                        <input class="campoRedondo color-contCampo barra text-white font-size-1" id="contrasena"></input>
                     </div>
                     <div class="font-campos p-2 text-bold"> 
-                        Tipo de Cuenta:
+                        Tipo Usuario
                         <br>
-                        <input type="radio" id = "vendedor">
-                        <label for="vendedor">Vendedor</label>
-                        <br>
-                        <input type="radio" id = "comprador">
-                        <label for="comprador">Comprador</label>
-                        <br>
-                        <input type="radio" id ="administrador">
-                        <label for="administrador">Administrador</label>
-                        <br>
+                        <select id="tipo_usuario">
+                            <option value=''>-- Seleccione --</option>
+                            <option value="1">Vendedor</option>
+                            <option value="2">Comprador</option>
+                            <option value="3">Administrador</option>
+                            
+                        </select>
                     </div>
                 </form>
                 <div>
-                    <button class="botonRedondo color-gris text-white font-campos float-r m-b">Cancelar</button>
-                    <button class="botonRedondo color-Search font-campos float-r m-b">Continuar</button>
+                    <button class="botonRedondo color-gris text-white font-campos float-r m-b" id="cancelar">Cancelar</button>
+                    <button class="botonRedondo color-Search font-campos float-r m-b" id ="continuar">Continuar</button>
                 </div>
              </div>
         </div>
@@ -127,5 +122,7 @@
             </div>
         </div>
     </div>
+    <script src="registro.js"></script>
+    <script src="consulta.js"></script>
 </body>
 </html>
