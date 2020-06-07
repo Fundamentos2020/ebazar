@@ -10,7 +10,10 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title>eBazar</title>
 </head>
-<body class="m-0">
+<body class="m-0" onload="carga()">
+    <script src="catProductos.js"></script>
+    <script src="consulta.js"></script>
+
     <!----Sección del encabezado de la página--->
     <div class="row color-Banner text-white">
         <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
@@ -25,7 +28,7 @@
                         <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                     </div>
                     <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
-                        <img class="img_search" align="middle" src="search.png" alt="" srcset="">
+                        <img class="img_search"  src="search.png" alt="" srcset="">
                     </div>
                 </div>
             </div>                
@@ -38,13 +41,7 @@
         <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
 
         <div class="menuV2 font-menu">
-            <ul class="font-2">
-                <li onclick="window.location.href = 'inicio.html'">Inicio</li>
-                <li onclick="window.location.href = 'catProductos.html'">Productos</li>
-                <li onclick="window.location.href = 'misProductos.html'">Vender</li>
-                <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
-                <li onclick="window.location.href = 'miCuenta.html'">Mi cuenta</li>
-            </ul>
+            <ul class="font-2" id="zonaMenu"></ul>
         </div>
     </div>
 
@@ -55,21 +52,7 @@
                 <!--Zona de los filtros/categorías-->
                 <div class="col-m-2 col-s-12" >
                     <div>
-                        <ul id="departamentos" class="p-1">
-                            <span class="font-campos text-bold">Departamentos</span>
-                            <li>
-                                <input type="checkbox" id = "electronicos">
-                                <label for="electronicos">Accesorios Electrónicos</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id = "alimentos">
-                                <label for="alimentos">Alimentos y Bebidas</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id ="audio">
-                                <label for="audio">Audio y Video</label>
-                            </li>
-                        </ul>
+                        <ul id="departamentos" class="p-1"></ul>
                     </div>
                     <div>
                         <ul id="precios" class="p-1">
@@ -91,128 +74,8 @@
                 </div>
                 <!--Zona de imagenes de productos-->
                 <div class="col-m-10 col-s-12 bizq-0">
-                    <div class="row p-c">
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>    
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>         
-                                  
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>    
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>         
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>    
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>        
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>    
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>     
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>    
-                        <div class="col-m-2 col-s-5 card text-center">
-                            <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
-                            <div class="text-left">
-                                <span>$1,689.00</span>
-                                <br>
-                                <span>Descripción</span>
-                                <br>
-                                <span>Valoración</span>
-                                <br>
-                                <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
-                            </div>
-                        </div>              
+                    <div class="row p-c" id="catalogo">
+                        
                     </div>
                 </div>
             </div>

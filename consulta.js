@@ -2,7 +2,8 @@ const api = "http://localhost:80/ebazar-back/";
 const client = "http://localhost:80/ebazar/";
 //const client = "inicio.html";
 
-function getSesion() {
+function getSesion()
+{
     var sesion = localStorage.getItem("lusuarios_sesion");
     
     if (sesion != null && sesion != "")
@@ -25,7 +26,7 @@ function refreshToken() {
 
     var xhttp = new XMLHttpRequest();
 
-    xhttp.open("PATCH", api + "sesiones/" + sesion.id_sesion, false);
+    xhttp.open("PATCH", api + "sesiones/id_sesion" + sesion.id_sesion, false);
     xhttp.setRequestHeader("Authorization", sesion.token_acceso);
     xhttp.setRequestHeader("Content-Type", "application/json");
 
