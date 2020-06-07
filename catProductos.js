@@ -103,7 +103,7 @@ function getProductos() {
         productos['productos'].forEach(producto => {
             html += 
                 `<div class="col-m-2 col-s-5 card text-center">
-                <img class = "img-fluid" src="https://picsum.photos/300/300" alt="">
+                <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="">
                 <div class="text-left">
                     <span>$${producto.precio}</span>
                     <br>
