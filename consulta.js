@@ -1,6 +1,7 @@
-const api = "http://localhost:80/ebazar-back/";
-const client = "http://localhost:80/ebazar/";
-//const client = "inicio.html";
+//const api = "http://localhost:80/ebazar-back/";
+//const client = "http://localhost:80/ebazar/";
+const api = "http://localhost:8080/ebazar-back/";
+const client = "inicio.html";
 
 function getSesion() {
     var sesion = localStorage.getItem("lusuarios_sesion");
