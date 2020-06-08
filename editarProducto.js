@@ -7,6 +7,8 @@ function cargar() {
         window.location.href = loginPage;
     }
 
+    getDepartamentos();
+
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -17,7 +19,7 @@ function cargar() {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `${serverUrl}/productos?producto_id=${id}`, true);
+    xhr.open("GET", `${serverUrl}/producto?producto_id=${id}`, true);
     xhr.setRequestHeader("Authorization", session.token_acceso);
 
     //xhr.open("GET", "editarProducto.json", true);
@@ -120,7 +122,7 @@ function actualizarProducto() {
 
         // Hace el post
         const xhr = new XMLHttpRequest();
-        xhr.open("PATCH", `${serverUrl}/productos?producto_id=${id}`, true);
+        xhr.open("PATCH", `${serverUrl}/producto?producto_id=${id}`, true);
         xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
@@ -168,6 +170,34 @@ var loadFile = function (event) {
         URL.revokeObjectURL(output.src) // free memory
     }
 };
+
+//Obtener los departamentos de manera asíncrona.
+function getDepartamentos() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", serverUrl + "/departamentos", false);
+
+    xhttp.send();
+
+    var data = JSON.parse(xhttp.responseText);
+
+    if (data.success === true){
+        departamentos = data.data;
+        var html = "";
+        departamentos['departamentos'].forEach(departamento => {
+            html += 
+                `
+                <option value=${departamento.id}>${departamento.nombre}</option>
+                `;
+        });
+
+        document.getElementById('i_departamento').innerHTML = html;
+
+    }
+    else {
+        alert(data.messages);
+    }
+}
 
 function agregarCarac() {
     numCaracteristicas++;

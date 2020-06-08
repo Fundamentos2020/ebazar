@@ -17,7 +17,7 @@ function cargar() {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `${serverUrl}/productos?producto_id=${id}`, true);
+    xhr.open("GET", `${serverUrl}/producto?producto_id=${id}`, true);
     xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "producto.json", true);
 

@@ -78,7 +78,7 @@ function logOut()
 {
     var sesion = getSesion();
 
-    if (sesion != null && Number.isInteger(sesion.id_sesion)) 
+    if (sesion != null)// && Number.isInteger(sesion.id_sesion)) 
     {    
         var xhttp = new XMLHttpRequest();
 
@@ -92,7 +92,7 @@ function logOut()
             if (data.success === true)
             {
                     localStorage.removeItem("lusuarios_sesion",JSON.stringify(data.data));
-                    window.location.href = client + "inicio.html";
+                    window.location.href = client;// + "inicio.html";
             }
             else 
             {
@@ -100,7 +100,8 @@ function logOut()
                 alert(data.messages);
             }
         }
+
+        xhttp.send();
     }
-    xhttp.send();
 
 }

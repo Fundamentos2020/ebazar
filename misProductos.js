@@ -13,7 +13,7 @@ function cargar() {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `${serverUrl}/productos?id_vendedor=${id}`, true);
+    xhr.open("GET", `${serverUrl}/producto?id_vendedor=${id}`, true);
     xhr.setRequestHeader("Authorization", session.token_acceso);
     //xhr.open("GET", "misProductos.json", true);
 
@@ -106,7 +106,7 @@ function eliminarProducto(id) {
         // Realiza la peticion de borrar producto
         // Hace el post
         const xhr = new XMLHttpRequest();
-        xhr.open("DELETE", `${serverUrl}/productos?producto_id=${id}`, true);
+        xhr.open("DELETE", `${serverUrl}/producto?producto_id=${id}`, true);
         xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
             if(this.status === 200) {

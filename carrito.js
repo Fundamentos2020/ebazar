@@ -5,11 +5,9 @@ function cargar() {
     if(session == null) {
         window.location.href = loginPage;
     }
+    id = session.id_usuario;
 
     menu();
-    id = session.id_user;
-
-    alert(id);
 
     const xhr = new XMLHttpRequest();
 
@@ -83,7 +81,7 @@ function finalizarCompra() {
     if(session == null) {
         window.location.href = loginPage;
     }
-    
+
     let boton = document.getElementById('b_comprar');
     boton.innerHTML = '<div class="loader"></div>';
 

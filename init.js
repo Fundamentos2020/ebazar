@@ -27,7 +27,7 @@ function getLoMasVendido()
             if (i < 5){
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
-                <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="" onclick="window.location.href = 'producto.html'">
+                <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
             </div> `;
             }
             i++;
@@ -44,7 +44,6 @@ function getLoMasVendido()
 function getOfertas()
 {
     var xhttp = new XMLHttpRequest();
-
     xhttp.open("GET", api + "productos", false);
 
     xhttp.send();
@@ -59,7 +58,7 @@ function getOfertas()
             if (i < 5){
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
-                <img class = "img-fluid" src=${producto.img} alt="" onclick="window.location.href = 'producto.html'">
+                <img class = "img-fluid" src=${producto.img} alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
             </div> `;
             }
             i++;
@@ -91,7 +90,7 @@ function getCategoria()
             if (i < 5){
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
-                <img class = "img-fluid" src=${producto.img} alt="" onclick="window.location.href = 'producto.html'">
+                <img class = "img-fluid" src=${producto.img} alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
             </div> `;
             i++;
             }

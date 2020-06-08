@@ -78,7 +78,7 @@ function publicarProducto() {
 
         // Hace el post
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", `${serverUrl}/productos`, true);
+        xhr.open("POST", `${serverUrl}/producto`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader("Authorization", session.token_acceso);
         xhr.onload = function() {
