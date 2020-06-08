@@ -5,7 +5,8 @@ function cargar() {
     if(session == null) {
         window.location.href = loginPage;
     }
-
+    
+    menu();
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -25,6 +26,7 @@ function cargar() {
             console.log(this.responseText);
 
             let producto = JSON.parse(this.responseText).data.producto;
+            console.log(producto);
 
             // Carga los valores del producto
             let titulo = document.getElementById("p_titulo");

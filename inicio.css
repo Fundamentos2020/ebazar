@@ -39,6 +39,7 @@
 
     .menuV2{
         position: absolute;
+        z-index: 10000;
         background: rgba(181, 188, 194, 0.9);
         width: 70%;
         margin-left: -70%;
