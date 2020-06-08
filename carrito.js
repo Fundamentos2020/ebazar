@@ -24,12 +24,15 @@ function cargar() {
             let carritoHtml = "";
             let precioProductos = 0;
             carrito.productos.forEach(producto => {
+                img = 'https://picsum.photos/100/100';
+                if(producto.img != "")
+                    img = producto.img;
                 precioProductos += producto.precio;
                 carritoHtml += `
                     <div class="contendor_productos">
                         <div class="compra_producto">
                             <div class="compra_imagen">
-                                <img src="https://picsum.photos/100/100" alt="">
+                                <img src="${img}" alt="" class="img-carrito">
                             </div>
                             <div class="compra_titulo">
                                 <a href="producto.html?id=${producto.id}">${producto.titulo}</a>

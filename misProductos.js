@@ -33,10 +33,13 @@ function cargar() {
             }
 
             productos.forEach(producto => {
+                var img = 'https://picsum.photos/200/200';
+                if(producto.img != "")
+                    img = producto.img;
                 productosHtml += `
                 <div class="row producto">
                     <div class="col-2">
-                        <img src="https://picsum.photos/200/200" class="img_producto" alt="">
+                        <img src="${img}" class="img_producto" alt="">
                     </div>
 
                     <div class="col-m-7 col-s-5">

@@ -7,6 +7,15 @@ function carga()
     getCategoria();
 }
 
+function compare( a, b ) {
+    if ( a.vendidos < b.vendidos ){
+      return -1;
+    }
+    if ( a.vendidos > b.vendidos ){
+      return 1;
+    }
+    return 0;
+  }
 
 
 function getLoMasVendido()
@@ -23,11 +32,18 @@ function getLoMasVendido()
         productos = data.data;
         let i = 0;
         var html = `<h3 class="section-title border-b2">Lo más vendido</h3>`;
+
+          
+        productos['productos'].sort(compare);
+
         productos['productos'].forEach(producto => {
             if (i < 5){
+                img = 'https://picsum.photos/id/537/300/300';
+                if(producto.img != "")
+                    img = producto.img;
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
-                <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
+                <img class = "img-fluid" src="${img}" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
             </div> `;
             }
             i++;
@@ -56,15 +72,18 @@ function getOfertas()
         var html = `<h3 class="section-title border-b2 p-2">Ofertas destacadas</h3>`;
         productos['productos'].forEach(producto => {
             if (i < 5){
+                img = 'https://picsum.photos/id/537/300/300';
+                if(producto.img != "")
+                    img = producto.img;
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
-                <img class = "img-fluid" src=${producto.img} alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
-            </div> `;
+                    <img class = "img-fluid" src="${img}" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
+                </div> `;
             }
             i++;
            
         });
-
+        console.log(document.getElementById('ofertas'));
         document.getElementById('ofertas').innerHTML = html;
     }
     else {
@@ -76,7 +95,7 @@ function getCategoria()
 {
     var xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET", api + "productos", false);
+    xhttp.open("GET", api + "productos/id_depa=3", false);
 
     xhttp.send();
 
@@ -85,12 +104,15 @@ function getCategoria()
     if (data.success === true){
         productos = data.data;
         let i = 0;
-        var html = `<h3 class="section-title border-b2 p-2">Entretenimiento</h3>`;
+        var html = `<h3 class="section-title border-b2 p-2">Alimentos y Bebidas</h3>`;
         productos['productos'].forEach(producto => {
             if (i < 5){
+                img = 'https://picsum.photos/id/537/300/300';
+                if(producto.img != "")
+                    img = producto.img;
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
-                <img class = "img-fluid" src=${producto.img} alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
+                <img class = "img-fluid" src="${img}" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
             </div> `;
             i++;
             }

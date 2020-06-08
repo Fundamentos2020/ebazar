@@ -50,15 +50,16 @@ function getProductos() {
         productos = data.data;
         var html = ``;
         productos['productos'].forEach(producto => {
+            var img = 'https://picsum.photos/id/537/300/300';
+            if(producto.img != "")
+                img = producto.img;
             html += 
                 `<div class="col-m-2 col-s-5 card text-center">
-                <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="">
+                <img class = "img-fluid" src="${img}" alt="">
                 <div class="text-left">
                     <span>$${producto.precio}</span>
                     <br>
                     <span>${producto.titulo}</span>
-                    <br>
-                    <span>Valoración</span>
                     <br>
                     <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html?id=${producto.id}'">Ver Producto</button>
                 </div>
@@ -88,15 +89,16 @@ function cargaCategorias(id)
         productos = data.data;
         var html = ``;
         productos['productos'].forEach(producto => {
+            var img = 'https://picsum.photos/id/537/300/300';
+            if(producto.img != "")
+                img = producto.img;
             html += 
                 `<div class="col-m-2 col-s-5 card text-center">
-                <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="">
+                <img class = "img-fluid" src="${img}" alt="">
                 <div class="text-left">
                     <span>$${producto.precio}</span>
                     <br>
                     <span>${producto.titulo}</span>
-                    <br>
-                    <span>Valoración</span>
                     <br>
                     <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html?id=${producto.id}'">Ver Producto</button>
                 </div>
@@ -115,22 +117,44 @@ function cargaPrecios(id)
 {
     var cantidadMenor;
     var cantidadMayor;
+    let v = true;
 
     switch(id)
     {
         case '1': cantidadMenor = 0;
                 cantidadMayor = 250;
+                v = document.getElementById('c1').checked;
+                document.getElementById('c2').checked = false;
+                document.getElementById('c3').checked = false;
+                document.getElementById('c4').checked = false;
             break;
         case '2': cantidadMenor = 250;
                 cantidadMayor = 500;
+                v = document.getElementById('c2').checked;
+                document.getElementById('c1').checked = false;
+                document.getElementById('c3').checked = false;
+                document.getElementById('c4').checked = false;
             break;
         case '3': cantidadMenor = 500;
                 cantidadMayor = 1000;
+                v = document.getElementById('c3').checked;
+                document.getElementById('c1').checked = false;
+                document.getElementById('c2').checked = false;
+                document.getElementById('c4').checked = false;
             break;
         case '4': cantidadMenor = 1000;
                 cantidadMayor = 10000;
+                v = document.getElementById('c4').checked;
+                document.getElementById('c2').checked = false;
+                document.getElementById('c3').checked = false;
+                document.getElementById('c1').checked = false;
             break; 
     }  
+
+    if(v == false) {
+        getProductos();
+        return;
+    }
 
     var xhttp = new XMLHttpRequest();
 
@@ -146,15 +170,18 @@ function cargaPrecios(id)
         productos['productos'].forEach(producto => {
             if (producto.precio > cantidadMenor && producto.precio < cantidadMayor)
             {
+                img = 'https://picsum.photos/id/537/300/300';
+                if(producto.img != "")
+                    img = producto.img;
+                //<span>Valoración</span>
+                //<br>
                 html += 
                     `<div class="col-m-2 col-s-5 card text-center">
-                    <img class = "img-fluid" src="https://picsum.photos/id/537/300/300" alt="">
+                    <img class = "img-fluid" src="${img}" alt="">
                     <div class="text-left">
                         <span>$${producto.precio}</span>
                         <br>
                         <span>${producto.titulo}</span>
-                        <br>
-                        <span>Valoración</span>
                         <br>
                         <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html?id=${producto.id}'">Ver Producto</button>
                     </div>

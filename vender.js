@@ -50,7 +50,8 @@ function publicarProducto() {
         descripcion_larga: document.getElementById('i_descripcion_larga').value,
         ubicacion: document.getElementById('i_ubicacion').value,
         precio: parseFloat(document.getElementById('i_precio').value),
-        disponibles: parseInt(document.getElementById('i_disponibles').value)
+        disponibles: parseInt(document.getElementById('i_disponibles').value),
+        img: document.getElementById('i_img').value
     }
 
     // Caracterisitcas

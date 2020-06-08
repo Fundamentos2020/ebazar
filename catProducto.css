@@ -269,12 +269,12 @@ h1 {
 
 
 .card:hover{
-    border: 0.2em solid lightgray;
+    border: 1px solid gray;
 }
 
 .img-fluid{
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
+    height: 120px;
 }
 
 /*Botón "Ver producto"*/

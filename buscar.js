@@ -43,10 +43,15 @@ function cargar() {
             }
 
             resultadoBusqueda.productos.forEach(producto => {
+                //<img class="img_producto" src="https://picsum.photos/200/200" alt="">
+                let imagen = "https://picsum.photos/200/200";
+                if(producto.img != "")
+                    imagen = producto.img;
+
                 productosHtml += `
                 <div class="row producto_contendor">
                     <div class="col-m-2 col-s-4">
-                        <img class="img_producto" src="https://picsum.photos/200/200" alt="">
+                        <img class="img_producto" src="${imagen}" alt="">
                     </div>
                     <div class="col-m-10 col-s-8">
                         <div class="texto_titulo"> <a href="producto.html?id=${producto.id}">${producto.titulo}</a> </div>

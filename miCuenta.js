@@ -13,7 +13,7 @@ function getInformation()
     var session = getSesion();
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", api +  `usuarios/id_usuario=${session.id_user}`, false);
+    xhttp.open("GET", api +  `usuarios/id_usuario=${session.id_usuario}`, false);
 
     xhttp.send();
 
@@ -74,15 +74,16 @@ function actualizaInfo()
     var session = getSesion();
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("PATCH", api + `usuarios/id_usuario=${session.id_user}`, true);
+    xhttp.open("PATCH", api + `usuarios/id_usuario=${session.id_usuario}`, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
 
     xhttp.onload = function() {
         if (this.status == 200) {
+            console.log(this.responseText);
             var data = JSON.parse(this.responseText);
 
             if (data.success === true){
-                window.location.href =client;
+                window.location.reload();
             }
         }
         else {
@@ -93,15 +94,20 @@ function actualizaInfo()
 
     var num_telefono = document.getElementById('num_telefono').value;
     var domicilio = document.getElementById('domicilio').value;
-    var str = '{ "num_telefono": num_telefono, "domicilio": domicilio}';
+    //var str = '{ "num_telefono": num_telefono, "domicilio": domicilio}';
+    var obj = {};
 
     if(num_telefono !== null)
     {
-        
+        obj['num_telefono'] = num_telefono;
     }
 
-    var json = str;
-    var json_string = JSON.stringify(json);
+    if(domicilio !== null)
+    {
+        obj['domicilio'] = domicilio;
+    }
+
+    var json_string = JSON.stringify(obj);
     
     xhttp.send(json_string);
 }

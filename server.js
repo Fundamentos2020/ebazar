@@ -76,11 +76,11 @@ function logOut()
 {
     var sesion = getSesion();
 
-    if (sesion != null && Number.isInteger(sesion.id_sesion)) 
+    if (sesion != null)// && Number.isInteger(sesion.id_sesion)) 
     {    
         var xhttp = new XMLHttpRequest();
 
-        xhttp.open("DELETE", serverUrl + `/sesiones/id_sesion=${sesion.id_sesion}`, true);
+        xhttp.open("DELETE", serverUrl + `sesiones/id_sesion=${sesion.id_sesion}`, true);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.setRequestHeader("Authorization",sesion.token_acceso);
 
@@ -90,7 +90,7 @@ function logOut()
             if (data.success === true)
             {
                     localStorage.removeItem("lusuarios_sesion",JSON.stringify(data.data));
-                    window.location.href = 'inicio.html';
+                    window.location.href = client;// + "inicio.html";
             }
             else 
             {
@@ -101,4 +101,5 @@ function logOut()
 
         xhttp.send();
     }
+
 }
