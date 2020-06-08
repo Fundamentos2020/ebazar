@@ -6,52 +6,44 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href="inicio.css">
     <link rel="stylesheet" href="vender.css">
+    <link rel="stylesheet" href="miCuenta.css">
+
     <title>Vender</title>
 </head>
-<body>
+<body class="m-0" onload="carga()">
     <script src="server.js"></script>
     <script src="vender.js"></script>
-    <div class="row">
-        <!----Sección del encabezado de la página--->
-        <div class="row color-1">
-            <div class="col-m-8 col-s-12 p-1 font-1 e-titulo">
-                <a href="inicio.html" style="text-decoration: none;">
-                    <h1>eBazar</h1>
-                </a>
-            </div>
-            <div class="col-m-4 col-s-12 pS">
-                <div class="row">
-                    <div class="contendor_search">
-                        <div class="col-m-10 col-s-11">
-                            <input type="text" placeholder="Ej. Monitores gamers" class="search2">  
-                        </div>
-                        <div class="col-m-2 col-s-1 search_icon" onclick="window.location.href = 'buscar.html'">
-                            <img class="img_search" align="middle" src="search.png" alt="" srcset="">
-                        </div>
-                    </div>
-                </div>                
-            </div>
-        </div>
-    </div>
 
-    <!----Sección del menú de la página--->
-    <div class="row font-2 text-center">
-        <div class="col-m-2 col-s-12 menu" onclick="window.location.href = 'inicio.html'">
-            Inicio
-        </div>
-        <div class="col-m-2 col-s-12 menu" onclick="window.location.href = 'catProductos.html'">
-            Productos
-        </div>
-        <div class="col-m-3 col-s-12 menu" onclick="window.location.href = 'misProductos.html'">
-            Vender
-        </div>
-        <div class="col-m-2 col-s-12 menu" onclick="window.location.href = 'Carrito.html'"> 
-            Carrito
-        </div>
-        <div class="col-m-3 col-s-12 menu" onclick="window.location.href = 'miCuenta.html'">
-            Mi cuenta
-        </div>
+   <!----Sección del encabezado de la página--->
+   <div class="row color-Search">
+    <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
+        <a href="inicio.html" style="text-decoration: none;">
+            <h1>eBazar</h1>
+        </a>
     </div>
+    <div class="col-m-4 col-s-8 pS">
+        <div class="row">
+            <div class="contendor_search">
+                <div class="col-m-10 col-s-11">
+                    <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
+                </div>
+                <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
+                    <img class="img_search" src="search.png" alt="" srcset="">
+                </div>
+            </div>
+        </div>                
+    </div>
+</div>
+
+    <!--Sección del menú de la página-->
+    <div id="preMenu">
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
+
+        <div class="menuV2 font-2">
+            <ul class="font-2" id="zonaMenu"></ul>
+        </div>
+    <div>
 
     <div class="row p_vender">
         <div class="col-m-12 col-s-12 contendor_vender">
@@ -73,12 +65,7 @@
                         Departamento
                     </div>
                     <div class="contenedor_input">
-                        <select id="i_departamento" name="departamento">
-                            <option value="1">Electronica</option>
-                            <option value="2">Electrodomésticos</option>
-                            <option value="3">Alimentos y Bebidas</option>
-                            <option value="4">Audio</option>
-                        </select>
+                        <select id="i_departamento" name="departamento"></select>
                     </div>
                 </div>
 

@@ -4,6 +4,8 @@ function cargar() {
         window.location.href = loginPage;
     }
 
+    menu();
+    
     let id = session.id_usuario;
     // Cargar parametros del URL
     const queryString = window.location.search;

@@ -12,7 +12,11 @@
 
     <title>Mi Cuenta</title>
 </head>
-    <body class="m-0">
+    <body class="m-0" onload="cargar()">
+
+        <script src="miCuenta.js"></script>
+        <script src="consulta.js"></script>
+
         <!----Sección del encabezado de la página--->
         <div class="row color-Search">
             <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
@@ -27,7 +31,7 @@
                             <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                         </div>
                         <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
-                            <img class="img_search" align="middle" src="search.png" alt="" srcset="">
+                            <img class="img_search" src="search.png" alt="" srcset="">
                         </div>
                     </div>
                 </div>                
@@ -39,13 +43,7 @@
             <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
     
             <div class="menuV2 font-2">
-                <ul class="font-2">
-                    <li onclick="window.location.href = 'inicio.html'">Inicio</li>
-                    <li onclick="window.location.href = 'catProductos.html'">Productos</li>
-                    <li onclick="window.location.href = 'misProductos.html'">Vender</li>
-                    <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
-                    <li onclick="window.location.href = 'miCuenta.html'">Mi cuenta</li>
-                </ul>
+                <ul class="font-2" id="zonaMenu"></ul>
             </div>
         </div>
     
@@ -67,51 +65,17 @@
                             <div>
                                 <button  class="botonRedondo color-Search font-campos">Cambiar imagen</button>
                             </div>
-                        </div>  
-                        <div class="p-2 font-campos text-blue">
-                            Publicaciones
-                        </div>  
-                        <div class="p-2 font-campos text-blue">
-                            Ventas
-                        </div>                  
+                        </div>                 
                     </div>
+
                     <!--Datos del Usuario-->
-                    <div class="col-m-9 col-s-12 bl-1">
-                        <button class="float-r botonAyuda border-azul color-white text-blue font-campos m-2">?</button>
-                        <div class="font-campos p-2 text-bold">
-                            Username
-                            <div class="campoRedondo color-contCampo barra text-white font-size-1">
-                                fernando.barc
-                            </div>
-                        </div>
-                        <div class="font-campos p-2 text-bold">
-                            Nombre
-                            <div class="campoRedondo color-contCampo barra text-white font-size-1">
-                                Fernando
-                            </div>
-                        </div>
-                        <div class="font-campos p-2 text-bold">
-                            Dirección
-                            <div class="campoRedondo color-contCampo barra text-white font-size-1">
-                                AV. SALVADOR NAVA MARTINEZ #1789
-                            </div>
-                        </div>
-                        <div class="font-campos p-2 text-bold">
-                           Teléfono
-                           <div class="campoRedondo color-contCampo barra text-white font-size-1">
-                            0000000000000
-                            </div>
-                        </div>
-                        <div class="font-campos p-2 text-bold"> 
-                            E-mail
-                            <div class="campoRedondo color-contCampo barra text-white font-size-1">
-                                prueba@outlook.es
-                            </div>
-                        </div>
+                    <div class="col-m-9 col-s-12 bl-1" id="info">
+                        <!--<button class="float-r botonAyuda border-azul color-white text-blue font-campos m-2">?</button>-->
                     </div>
+
                     <div>
-                        <button class="botonRedondo color-gris text-white font-campos float-r m-b">Cancelar</button>
-                        <button class="botonRedondo color-Search font-campos float-r m-b">Guardar Cambios</button>
+                        <button class="botonRedondo color-gris text-white font-campos float-r m-b" onclick="window.location.href='inicio.html'">Cancelar</button>
+                        <button class="botonRedondo color-Search font-campos float-r m-b" onclick="actualizaInfo()">Guardar Cambios</button>
                     </div>
                     
                  </div>

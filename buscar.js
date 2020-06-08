@@ -3,7 +3,7 @@ function cargar() {
     if(session == null) {
         window.location.href = loginPage;
     }
-
+    menu();
     // Cargar parametros del URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);

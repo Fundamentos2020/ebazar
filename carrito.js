@@ -6,7 +6,10 @@ function cargar() {
         window.location.href = loginPage;
     }
 
-    id = session.id_usuario;
+    menu();
+    id = session.id_user;
+
+    alert(id);
 
     const xhr = new XMLHttpRequest();
 

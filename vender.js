@@ -1,5 +1,11 @@
 let numCaracteristicas = 1;
 
+function carga()
+{
+    menu();
+    getDepartamentos();
+}
+
 var loadFile = function (event) {
     var output = document.getElementById('mainImg');
     output.src = URL.createObjectURL(event.target.files[0]);
@@ -30,6 +36,8 @@ function publicarProducto() {
     if(session == null) {
         window.location.href = loginPage;
     }
+    
+ 
 
     let id_usuario = session.id_usuario;
 
@@ -97,5 +105,33 @@ function publicarProducto() {
     
         xhr.send(JSON.stringify(data));
 
+    }
+}
+
+//Obtener los departamentos de manera asíncrona.
+function getDepartamentos() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", serverUrl + "/departamentos", false);
+
+    xhttp.send();
+
+    var data = JSON.parse(xhttp.responseText);
+
+    if (data.success === true){
+        departamentos = data.data;
+        var html = "";
+        departamentos['departamentos'].forEach(departamento => {
+            html += 
+                `
+                <option value=${departamento.id}>${departamento.nombre}</option>
+                `;
+        });
+
+        document.getElementById('i_departamento').innerHTML = html;
+
+    }
+    else {
+        alert(data.messages);
     }
 }
