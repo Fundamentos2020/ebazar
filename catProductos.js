@@ -98,7 +98,7 @@ function cargaCategorias(id)
                     <br>
                     <span>Valoración</span>
                     <br>
-                    <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
+                    <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html?id=${producto.id}'">Ver Producto</button>
                 </div>
             </div>    `;
         });
@@ -156,7 +156,7 @@ function cargaPrecios(id)
                         <br>
                         <span>Valoración</span>
                         <br>
-                        <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html'">Ver Producto</button>
+                        <button class="oferta" type="sumbit" onclick="window.location.href = 'producto.html?id=${producto.id}'">Ver Producto</button>
                     </div>
                 </div>    `;
             }
