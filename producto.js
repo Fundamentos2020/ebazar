@@ -1,4 +1,5 @@
 let id = 1;
+let producto;
 
 function cargar() {
     var session = getSesion();
@@ -25,8 +26,13 @@ function cargar() {
         if(this.status === 200) {
             console.log(this.responseText);
 
-            let producto = JSON.parse(this.responseText).data.producto;
+            producto = JSON.parse(this.responseText).data.producto;
             console.log(producto);
+
+            if(producto.id_usuario == session.id_usuario) {
+                document.getElementById('pregunta-div').innerHTML = "";
+                document.getElementById('b_comprar').innerHTML = "";
+            }
 
             // Carga los valores del producto
             let titulo = document.getElementById("p_titulo");
@@ -170,54 +176,12 @@ function pregunta() {
 }
 
 function comprar() {
-    let boton = document.getElementById('b_comprar');
-    boton.innerHTML = '<div class="loader"></div>';
+    var carrito = JSON.parse(localStorage.getItem("carrito"));
+    carrito.productos.push(producto);
 
-    var session = getSesion();
-    if(session == null) {
-        window.location.href = loginPage;
-    }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     
-    let id_usuario = session.id_usuario;
-
-    const data = {
-        id_usuario,
-        id_producto: id,
-        cantidad: 1
-    };
-
-    console.log(data);
-
-    // POST 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", `${serverUrl}/carrito`, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader("Authorization", session.token_acceso);
-    xhr.onload = function() {
-        if(this.status === 201) {
-            let data = JSON.parse(this.responseText);
-            console.log(data);
-            window.location.href = `carrito.html?id=${id_usuario}`;
-        } else if(this.status == 401) {
-            var data = JSON.parse(this.responseText);
-
-            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
-                console.log(data);
-                refreshToken();
-                //window.location.reload();
-            } else {
-                window.location.href = loginPage;
-            }
-        } else {
-            alert("Algo salio mal al comprar el producto, vuelve a intentar.");
-            cargar();
-            console.log(this.status);
-            console.log(this.responseText);
-
-            boton.innerHTML = '<div onclick="comprar()" class="myButton">Comprar</div>';
-        }
-    }
-    xhr.send(JSON.stringify(data));
+    window.location.href = 'carrito.html';
 }
 
 function ClickImgsProducto(e) {

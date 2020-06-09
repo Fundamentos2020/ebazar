@@ -101,5 +101,4 @@ function logOut()
 
         xhttp.send();
     }
-
 }

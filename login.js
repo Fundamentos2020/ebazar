@@ -24,6 +24,10 @@ function iniciaSesion(e)
 
             if (data.success === true){
                 localStorage.setItem('lusuarios_sesion', JSON.stringify(data.data));
+                localStorage.setItem('carrito', JSON.stringify({
+                    productos: [],
+                    envio: 50
+                }));
                 window.location.href = client;
             }
         }
