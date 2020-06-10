@@ -75,6 +75,20 @@ html{
     border-radius: 4px;
 }
 
+.propiedad {
+    border-top: 1px solid lightgray;
+    padding: 1em 1em;
+}
+
+.input_nombre {
+    width: 80%;
+    padding: 1em 1em;
+}
+
+.input_pregunta {
+    width: 100%;
+    padding: 1em 1em;
+}
 
 body {
     height: 100%;

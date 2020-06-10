@@ -1,4 +1,3 @@
-
 function cargar(){
     var session = getSesion();
     if(session == null){
