@@ -246,6 +246,18 @@ h1 {
     padding-left: 3em;
 }
 
+body,html {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: calc(100% - 4rem);
+}
+
+.footer {
+    height: 4rem;
+    background-color: #0099cc
+}
 
 .color-Search{background-color: #0099cc; color: white;}
 .color-Contenedor{background-color: #0099cc;}

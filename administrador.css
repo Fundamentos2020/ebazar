@@ -1,0 +1,102 @@
+
+.p-1{padding: 1em;}
+
+.py-1{padding-top: 1em;padding-bottom: 1em;}
+
+.pb-1{padding-bottom: 0.5em;}
+
+.bb{border-bottom: solid 1px lightgray;}
+
+.mx{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.border{
+    border: 1px solid black;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.h-600{height: 600px;}
+
+.m-1{margin: 1em;}
+
+.teal{background-color: teal;}
+
+.red{background-color: red;}
+
+.text_white{color: white;}
+
+.text_teal{color: teal}
+
+.back_white{background-color: white;}
+
+.flex{
+    display: flex;
+}
+
+#foto{
+    background-image: url("https://picsum.photos/200/200");
+    height: 10em;
+    align-items: flex-end;
+}
+
+#foto div{
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    background-color: #00000014;
+    height: 100%;
+}
+
+.skill_box{
+    background-color: lightsteelblue;
+    
+}
+
+.b_rad{border-radius: 10px;}
+
+.leng-box{height: 1em;}
+
+.pers-info{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+.section-title{
+    font-weight: bold; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+
+.current{
+    padding: 0 0.5em;
+    border-radius: 4px;
+}
+
+
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: calc(100% - 4rem);
+}
+
+.footer {
+    height: 4rem;
+    background-color: #0099cc
+}
+
+button:hover{
+    background-color: rgba(3, 88, 88, 0.425);
+}
+
+#salir:hover{
+    background-color: rgba(255, 0, 0, 0.288);
+}
+
+button{
+    cursor: pointer;
+}
