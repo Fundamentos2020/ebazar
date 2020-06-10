@@ -9,12 +9,12 @@ function cargar() {
 
     menu();
 
-    carrito = JSON.parse(localStorage.getItem('carrito'));
+    let carrito = JSON.parse(localStorage.getItem('carrito'));
 
     let carritoContendor = document.getElementById("carrito_c");
     let carritoHtml = "";
     let precioProductos = 0;
-    carrito.productos.forEach(producto => {
+    carrito.productos.forEach((producto, i) => {
         img = 'https://picsum.photos/100/100';
         if (producto.img != "")
             img = producto.img;
@@ -30,7 +30,11 @@ function cargar() {
                     </div>
                     <div class="compra_precio">
                         $ ${producto.precio}
+                        
                     </div>
+                    <span class="borrar-boton" onclick="borrarCarrito(${i})">
+                        <img src="https://img.icons8.com/flat_round/30/000000/delete-sign.png"/>
+                    </span>
                 </div>
             </div>`;
     });
@@ -54,43 +58,61 @@ function cargar() {
     }
 }
 
+function borrarCarrito(index) {
+    let carrito = JSON.parse(localStorage.getItem('carrito'));
+    carrito.productos.splice(index, 1);
+    console.log(carrito);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    cargar();
+}
+
 function finalizarCompra() {
     var session = getSesion();
     if (session == null) {
         window.location.href = loginPage;
     }
 
+    let id_usuario = session.id_usuario;
+
     let boton = document.getElementById('b_comprar');
     boton.innerHTML = '<div class="loader"></div>';
 
-    // PATCH 
-    const xhr = new XMLHttpRequest();
-    xhr.open("PATCH", `${serverUrl}/carrito?id_usuario=${id}`, true);
-    xhr.setRequestHeader("Authorization", session.token_acceso);
-    xhr.onload = function () {
-        if (this.status === 200) {
-            let data = JSON.parse(this.responseText);
-            console.log(data);
-            cargar();
-            alert("Compra finalizada");
-        } else if (this.status == 401) {
-            var data = JSON.parse(this.responseText);
+    let carrito = JSON.parse(localStorage.getItem('carrito'));
+    carrito.productos.forEach((producto, i) => {
+        var today = new Date();
+        var fecha = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-            if (data.messages.indexOf("Token de acceso ha caducado") >= 0) {
-                console.log(data);
+        // Crea una nueva decripcion de compra
+        const data = {
+            id_usuario,
+            id_producto: producto.id,
+            cantidad: 1,
+            fecha
+        };
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", `${serverUrl}/carrito`, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader("Authorization", session.token_acceso);
+        xhr.send(JSON.stringify(data));
+        if (xhr.status === 201) {
+            let dataR = JSON.parse(xhr.responseText);
+        } else if (xhr.status == 401) {
+            var dataR = JSON.parse(xhr.responseText);
+
+            if (dataR.messages.indexOf("Token de acceso ha caducado") >= 0) {
                 refreshToken();
-                //window.location.reload();
             } else {
                 window.location.href = loginPage;
             }
-        } else {
-            alert("Algo salio mal al finalizar la compra, vuelve a intentar.");
-            cargar();
-            console.log(this.status);
-            console.log(this.responseText);
-
-            boton.innerHTML = '<div onclick="comprar()" class="myButton">Comprar</div>';
         }
-    }
-    xhr.send();
+    });
+
+    localStorage.setItem('carrito', JSON.stringify({
+        productos: [],
+        envio: 50
+    }));
+
+    alert("Compra exitosa");
+    cargar();
 }
