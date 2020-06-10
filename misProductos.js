@@ -35,7 +35,7 @@ function cargar() {
             productos.forEach(producto => {
                 var img = 'https://picsum.photos/200/200';
                 if(producto.img != "")
-                    img = producto.img;
+                    img = `${serverUrl}/imagenes?id=${producto.img}`;
                 productosHtml += `
                 <div class="row producto">
                     <div class="col-2">

@@ -46,7 +46,7 @@ function cargar() {
                 //<img class="img_producto" src="https://picsum.photos/200/200" alt="">
                 let imagen = "https://picsum.photos/200/200";
                 if(producto.img != "")
-                    imagen = producto.img;
+                    imagen = `${serverUrl}/imagenes?id=${producto.img}`;
 
                 productosHtml += `
                 <div class="row producto_contendor">

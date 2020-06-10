@@ -34,6 +34,28 @@ function cargar() {
                 document.getElementById('b_comprar').innerHTML = "";
             }
 
+            // Imagenes del producto
+            let imagenes_contendor = document.getElementById('imagenes_producto');
+            imagenes_contendor.innerHTML = "";
+            imagenes_contendor.innerHTML +=
+            `
+            <div class="col-12">
+                <img class="img_otras img_selec" src="${serverUrl}/imagenes?id=${producto.img}" alt="" onclick="ClickImgsProducto(this)">
+            </div>
+            `;
+
+            var imgProducto = document.getElementById("imagen_producto");
+            imgProducto.src = `${serverUrl}/imagenes?id=${producto.img}`;
+
+            producto.imagenes.forEach(imagen => {
+                imagenes_contendor.innerHTML +=
+                `
+                <div class="col-12">
+                    <img class="img_otras" src="${serverUrl}/imagenes?id=${imagen}" alt="" onclick="ClickImgsProducto(this)">
+                </div>
+                `;
+            });
+
             // Carga los valores del producto
             let titulo = document.getElementById("p_titulo");
             titulo.innerText = producto.titulo;

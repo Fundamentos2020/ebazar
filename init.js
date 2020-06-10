@@ -40,7 +40,7 @@ function getLoMasVendido()
             if (i < 5){
                 img = 'https://picsum.photos/id/537/300/300';
                 if(producto.img != "")
-                    img = producto.img;
+                    img = `${api}imagenes?id=${producto.img}`;
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
                 <img class = "img-fluid" src="${img}" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
@@ -74,7 +74,7 @@ function getOfertas()
             if (i < 5){
                 img = 'https://picsum.photos/id/537/300/300';
                 if(producto.img != "")
-                    img = producto.img;
+                    img = `${api}imagenes?id=${producto.img}`;
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
                     <img class = "img-fluid" src="${img}" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">
@@ -109,7 +109,7 @@ function getCategoria()
             if (i < 5){
                 img = 'https://picsum.photos/id/537/300/300';
                 if(producto.img != "")
-                    img = producto.img;
+                    img = `${api}imagenes?id=${producto.img}`;
                 html += 
                 ` <div class = "col-m-2 col-s-10 card text-center ">
                 <img class = "img-fluid" src="${img}" alt="" onclick="window.location.href = 'producto.html?id=${producto.id}'">

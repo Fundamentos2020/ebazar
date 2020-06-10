@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const serverUrl = "http://localhost:8080/ebazar-back";
+
+        function subirImg() {
+            const imgFile = document.getElementById('img').files[0];
+            const formData = new FormData();
+            formData.append('img', imgFile);
+            formData.append('id_producto', -1);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", `${serverUrl}/imagenes`, true);
+            xhr.onload = function() {
+                console.log(this.status);
+                console.log(this.responseText);
+            }
+            xhr.send(formData);
+        }
+
+        function cargarImg() {
+          // document.getElementById('img-div').innerHTML = '<img src="http://localhost:8080/ebazar-back/Controllers/imagenesController.php?id=4" alt="">';
+        }  
+    </script>
+    <h1>Imagen prueba</h1>
+    <input type="file" id="img" name="img" accept="image/*" onchange="">
+    <button onclick="subirImg()">Subir</button>
+    <button onclick="cargarImg();">Cargar</button>
+    <div id="img-div">
+        
+    </div>
+</body>
+</html>

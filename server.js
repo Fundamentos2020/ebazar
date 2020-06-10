@@ -1,5 +1,5 @@
-//const serverUrl = "http://localhost:8080/ebazar-back";
-const serverUrl = "http://localhost:80/ebazar-back";
+const serverUrl = "http://localhost:8080/ebazar-back";
+//const serverUrl = "http://localhost:80/ebazar-back";
 const loginPage = "login.html";
 //const serverUrl = "https://ebazarmex.000webhostapp.com";
 
@@ -77,7 +77,7 @@ function logOut()
 {
     var sesion = getSesion();
 
-    if (sesion != null) && Number.isInteger(sesion.id_sesion)) 
+    if ((sesion != null) && Number.isInteger(sesion.id_sesion)) 
     {    
         var xhttp = new XMLHttpRequest();
 

@@ -52,7 +52,7 @@ function getProductos() {
         productos['productos'].forEach(producto => {
             var img = 'https://picsum.photos/id/537/300/300';
             if(producto.img != "")
-                img = producto.img;
+                img = `${api}imagenes?id=${producto.img}`;
             html += 
                 `<div class="col-m-2 col-s-5 card text-center">
                 <img class = "img-fluid" src="${img}" alt="">
@@ -91,7 +91,7 @@ function cargaCategorias(id)
         productos['productos'].forEach(producto => {
             var img = 'https://picsum.photos/id/537/300/300';
             if(producto.img != "")
-                img = producto.img;
+                img = `${api}imagenes?id=${producto.img}`;
             html += 
                 `<div class="col-m-2 col-s-5 card text-center">
                 <img class = "img-fluid" src="${img}" alt="">
@@ -172,7 +172,7 @@ function cargaPrecios(id)
             {
                 img = 'https://picsum.photos/id/537/300/300';
                 if(producto.img != "")
-                    img = producto.img;
+                    img = `${api}imagenes?id=${producto.img}`;
                 //<span>Valoración</span>
                 //<br>
                 html += 

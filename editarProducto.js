@@ -44,9 +44,6 @@ function cargar() {
             let ubicacion = document.getElementById("i_ubicacion")
             ubicacion.value = producto.ubicacion;
 
-            let img = document.getElementById("i_img")
-            img.value = producto.img;
-
             let precio = document.getElementById("i_precio")
             precio.value = producto.precio;
 
@@ -97,8 +94,7 @@ function actualizarProducto() {
         descripcion_larga: document.getElementById('i_descripcion_larga').value,
         ubicacion: document.getElementById('i_ubicacion').value,
         precio: parseFloat(document.getElementById('i_precio').value),
-        disponibles: parseInt(document.getElementById('i_disponibles').value),
-        img: document.getElementById('i_img').value,
+        disponibles: parseInt(document.getElementById('i_disponibles').value)
     }
 
     // Caracterisitcas
