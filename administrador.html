@@ -8,9 +8,9 @@
 
     <title>Administrador</title>
 </head>
-<body class="m-0">
-     <script src="consulta.js"></script>
-     <script src="administrador.js"></script>
+<body class="m-0" onload="cargar()">
+    <script src="consulta.js"></script>
+    <script src="administrador.js"></script>
      <!----Sección del encabezado de la página--->
      <div class="row color-Search ">
         <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
@@ -31,23 +31,16 @@
             </div>                
         </div>
     </div>
+
+    
+
     <div class="wrapper">
         <div class="row">
             <div class="col-m-3 col-s-12">
                 <div class="m-1 back_white">
                     <div class="flex p-1" id="foto"></div>
                     <div class="p-1 mx bb pers-info">
-                        <div class="section-title">ADMINISTRADOR</div>
-                        <br>
-                        <div class="pb-1">
-                            Nombre: 
-                        </div>
-                        <div class="pb-1">
-                            Username:
-                        </div>
-                        <div class="pb-1">
-                            Email:
-                        </div>
+                        <div class="section-title" id="informacionPersonal">ADMINISTRADOR</div>
                     </div>
                     <div class=" p-1">
                         <div class="section-title">MOSTRAR</div>
@@ -79,32 +72,33 @@
                         <h2 class="section-title">CREA PREGUNTA</h2>
                     </div>
 
-                    <form action="">
+                    <div>
                         Pregunta: 
                         <div>
-                            <input maxlength="100" id="i_descripcion_corta" type="text" class="input_nombre" placeholder="Ej. ¿Cómo ingresar al portal?">
+                            <input maxlength="100" id="titulo" type="text" class="input_nombre" placeholder="Ej. ¿Cómo ingresar al portal?">
                         </div>
                         <br>
                         Descripción
                         <div>
-                            <textarea maxlength="300" id="i_descripcion_corta" type="text" rows="10" class="input_pregunta" placeholder="Ej. Pon tu respuesta aquí..."></textarea>
+                            <textarea maxlength="500" id="descripcion" type="text" rows="10" class="input_pregunta" placeholder="Ej. Pon tu respuesta aquí..."></textarea>
                         </div>
                         <br>
-                        <button class="botonRedondo color-Search font-campos " id="savePregunta">Guardar Cambios</button>
-                    </form>
+                        <button class="botonRedondo color-Search font-campos " onclick="creaFAQ()">Guardar Cambios</button>
+                    </div>
                 </div>
 
                 <div class="m-1 p-1 back_white">
                     <div>
                         <h2 class="section-title">CREA DEPARTAMENTO</h2>
                     </div>
-                    <form>
+                    <div>
                         Nombre del Departamento
                         <div class="contenedor_input">
-                            <input maxlength="50" id="i_descripcion_corta" type="text" class="input_nombre" placeholder="Ej. Deportes">
-                            <button class="botonRedondo color-Search font-campos float-r m-b" id="saveDepartamento">Guardar Cambios</button>
+                            <input maxlength="50" id="nombre_depa" type="text" class="input_nombre" placeholder="Ej. Deportes">
                         </div>
-                    </form>
+                        <br>
+                        <button class="botonRedondo color-Search font-campos" onclick="creaDepartamento()">Guardar Cambios</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,6 +122,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

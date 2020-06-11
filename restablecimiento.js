@@ -1,0 +1,8 @@
+function cargar()
+{
+    menu();
+}
+
+{
+    
+}

@@ -7,9 +7,17 @@
     <link rel = "stylesheet" type = "text/css" href="inicio.css">
     <link rel="stylesheet" href="faq.css">
     <title>FAQ</title>
-</head>
-<body class="mar-0">
+
     
+
+
+</head>
+<body class="mar-0" onload="cargar()">
+    <!--Scripts al inicio-->
+    <script src="consulta.js"></script>
+    <script src="faq.js"></script>
+
+
     <div class="row">
         <!----Sección del encabezado de la página--->
         <div class="row color-1">
@@ -25,7 +33,7 @@
                             <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                         </div>
                         <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
-                            <img class="img_search" align="middle" src="search.png" alt="" srcset="">
+                            <img class="img_search" src="search.png" alt="" srcset="">
                         </div>
                     </div>
                 </div>                
@@ -39,12 +47,7 @@
         <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
 
         <div class="menuV2 font-2">
-            <ul class="font-2">
-                <li onclick="window.location.href = 'inicio.html'">Inicio</li>
-                <li onclick="window.location.href = 'catProductos.html'">Productos</li>
-                <li onclick="window.location.href = 'misProductos.html'">Vender</li>
-                <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
-                <li onclick="window.location.href = 'miCuenta.html'">Mi cuenta</li>
+            <ul class="font-2" id="zonaMenu">
             </ul>
         </div>
     </div>
@@ -54,10 +57,12 @@
         <div class="row p_faq">
             <div class="col-m-12 col-s-12 contendor_carrito">
                 <div class="faq_titulo">FAQ</div>
-                <div class="contendor_pregutas">
+                <div class="contendor_pregutas" id="contenido">
                     <button class="accordion">Pregunta 1</button>
                     <div class="panel">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores quod facilis eos eum? Molestiae provident magni pariatur exercitationem blanditiis.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores quod facilis eos eum? Molestiae provident magni pariatur exercitationem blanditiis.
+                        
+                    </p>
                     </div>
     
                     <button class="accordion">Pregunta 2</button>
@@ -75,7 +80,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores quod facilis eos eum? Molestiae provident magni pariatur exercitationem blanditiis.</p>
                     </div>
     
-                    <button class="accordion">Pregunta 5</button>
+                    <button class="accordion" onclick="despliega()">Pregunta 5</button>
                     <div class="panel">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores quod facilis eos eum? Molestiae provident magni pariatur exercitationem blanditiis.</p>
                     </div>
@@ -88,29 +93,69 @@
         var acc = document.getElementsByClassName("accordion");
         var i;
 
-        for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            /* Toggle between adding and removing the "active" class,
-            to highlight the button that controls the panel */
-            this.classList.toggle("active");
+        for (i = 0; i < acc.length; i++) 
+        {
+            acc[i].addEventListener("click", function() 
+            {
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                this.classList.toggle("active");
 
-            /* Toggle between hiding and showing the active panel */
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-            panel.style.display = "none";
-            } else {
-            panel.style.display = "block";
+                /* Toggle between hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") 
+                {
+                    panel.style.display = "none";
+                } 
+                else
+                {
+                    panel.style.display = "block";
+                }
+            });
+        }      
+
+        var xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", api + "faq", true);
+
+    xhttp.onload = function() {
+        if (this.status == 200) {
+            let html ="";
+            var data = JSON.parse(this.responseText);
+
+            if (data.success == true) 
+            {
+                let preguntas = data.data.preguntas;
+                preguntas.forEach(pregunta => {
+                html += 
+                    `<button class="accordion">${pregunta.titulo}</button>
+                    <div class="panel">
+                    <p>${pregunta.descripcion}</p>
+                    </div>`;
+                 });
+                
+                 document.getElementById('contenido').innerHTML = html;
+
             }
-        });
         }
+        else {
+            var data = JSON.parse(this.responseText);
+
+            alert(data.messages);
+        }
+    }
+    xhttp.send();
     </script>
 
-    <div class = "text-center color-3">
-        <div style="padding: 1em;">
-            <a href="faq.html" style="color: white; padding: 0em 1em;">FAQ</a>
-            <a href="terminos.html" style="color: white; padding: 0em 1em">Términos y condiciones</a>
+   
+    <footer style="margin-top: 6em;">
+        <div class = "text-center color-3">
+            <div style="padding: 1em;">
+                <a href="faq.html" style="color: white; padding: 0em 1em;">FAQ</a>
+                <a href="terminos.html" style="color: white; padding: 0em 1em">Términos y condiciones</a>
+            </div>
         </div>
-    </div>
+    </footer>
 
 </body>
 </html>

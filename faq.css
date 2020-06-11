@@ -1,6 +1,7 @@
 body {
     background-color: rgba(0,0,0,.1);
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
 
 * {
@@ -63,6 +64,7 @@ body {
     -moz-box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
     box-shadow: 9px 10px 11px -6px rgba(0,0,0,0.23);
     background-color: white;
+    height: 50em;
 }
 
 .faq_titulo {
@@ -117,4 +119,13 @@ body {
 
 .contendor_pregutas {
     padding: 2vw;
+}
+
+.wrapper {
+    min-height: calc(100% - 2rem);
+}
+
+.footer {
+    height: 4rem;
+    background-color: #0099cc
 }

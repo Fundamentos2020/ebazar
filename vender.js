@@ -2,6 +2,12 @@ let numCaracteristicas = 1;
 
 function carga()
 {
+    var session = getSesion();
+    if(session !== 1)
+    {
+        alert("No tienes los permisos para estar aquí");
+        window.location.href = "inicio.html";
+    }
     menu();
     getDepartamentos();
 }

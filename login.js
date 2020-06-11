@@ -51,8 +51,15 @@ function iniciaSesion(e)
 function documentListo() {
     var sesion = getSesion();
 
-    if (sesion != null && Number.isInteger(sesion.id_sesion)) {    
-        window.location.href = client + "inicio.html";
-        //window.location.href = client;
+    if (sesion != null && Number.isInteger(sesion.id_sesion)) {  
+        if (sesion.tipo_usuario === 3)
+        {
+            window.location.href = client + "administrador.html";
+        }  
+        else
+        {
+            window.location.href = client + "inicio.html";
+             //window.location.href = client;
+        } 
     }
 }

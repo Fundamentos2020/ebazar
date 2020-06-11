@@ -54,7 +54,7 @@ function getProductos() {
             if(producto.img != "")
                 img = `${api}imagenes?id=${producto.img}`;
             html += 
-                `<div class="col-m-2 col-s-5 card text-center">
+                `<div class="col-m-2 col-s-11 card text-center">
                 <img class = "img-fluid" src="${img}" alt="">
                 <div class="text-left">
                     <span>$${producto.precio}</span>
@@ -93,7 +93,7 @@ function cargaCategorias(id)
             if(producto.img != "")
                 img = `${api}imagenes?id=${producto.img}`;
             html += 
-                `<div class="col-m-2 col-s-5 card text-center">
+                `<div class="col-m-2 col-s-11 card text-center">
                 <img class = "img-fluid" src="${img}" alt="">
                 <div class="text-left">
                     <span>$${producto.precio}</span>
@@ -176,7 +176,7 @@ function cargaPrecios(id)
                 //<span>Valoración</span>
                 //<br>
                 html += 
-                    `<div class="col-m-2 col-s-5 card text-center">
+                    `<div class="col-m-2 col-s-11 card text-center">
                     <img class = "img-fluid" src="${img}" alt="">
                     <div class="text-left">
                         <span>$${producto.precio}</span>

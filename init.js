@@ -1,7 +1,8 @@
+var rand;
+
 function carga()
 {
     menu();
-
     getLoMasVendido();
     getOfertas();
     getCategoria();
@@ -59,8 +60,23 @@ function getLoMasVendido()
 
 function getOfertas()
 {
+    var i = Math.floor(Math.random() * 4) + 1;  // returns a random integer from 1 to 10
+    let titulo;
+
+    switch(i)
+    {
+        case 1: titulo = "Electrónica";
+            break;
+        case 2: titulo = "Electrodomesticos";
+            break;
+        case 3: titulo = "Audio";
+            break;
+        case 4: titulo = "Audio";
+            break;
+    }
+
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", api + "productos", false);
+    xhttp.open("GET", api + `productos/id_depa=${i}`, false);
 
     xhttp.send();
 
@@ -69,7 +85,7 @@ function getOfertas()
     if (data.success === true){
         productos = data.data;
         let i = 0;
-        var html = `<h3 class="section-title border-b2 p-2">Ofertas destacadas</h3>`;
+        var html = `<h3 class="section-title border-b2 p-2">${titulo}</h3>`;
         productos['productos'].forEach(producto => {
             if (i < 5){
                 img = 'https://picsum.photos/id/537/300/300';
@@ -83,7 +99,6 @@ function getOfertas()
             i++;
            
         });
-        console.log(document.getElementById('ofertas'));
         document.getElementById('ofertas').innerHTML = html;
     }
     else {

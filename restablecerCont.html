@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="login.css">
     <title>Restablecer Contraseña</title>
 </head>
-<body class="m-0">
+<body class="m-0" onload="cargar()">
+    <script src="consulta.js"></script>
+    <script src="restablecimiento.js"></script>
+
      <!----Sección del encabezado de la página--->
     <div class="row color-Banner text-white">
         <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
@@ -28,9 +31,20 @@
             </div>                
         </div>
     </div>
+
+    <!----Sección del menú de la página--->
+    <div id="preMenu">
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
+
+        <div class="menuV2 font-2">
+            <ul class="font-2" id="zonaMenu">
+            </ul>
+        </div>
+    </div>
     
 
-    <form class="row hg">
+    <div class="row hg">
         <div class="col-m-4 col-s-12 m-contenedor borde-0 color-blancoF">
             <h2 class="p-1">Restablecer Contraseña</h2>
             <div class="mb-4 p-1">
@@ -39,11 +53,11 @@
             </div>
             <div class="mb-4 p-1">
                 <span>Contraseña nueva: </span>
-                <input type="text" placeholder="*********" id="password">
+                <input type="password" placeholder="*********" id="password">
             </div>
-            <button class="botonRedondo color-Banner text-white float-r m-b" id="aceptar">Aceptar</button>     
+            <button class="botonRedondo color-Banner text-white float-r m-b" onclick="actualizaContrasena()">Aceptar</button>     
         </div>
-    </form>
+    </div>
 
     <div class="text-center color-Banner h">
         <div class = "text-center color-3">

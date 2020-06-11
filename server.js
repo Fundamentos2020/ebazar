@@ -1,5 +1,5 @@
-const serverUrl = "http://localhost:8080/ebazar-back";
-//const serverUrl = "http://localhost:80/ebazar-back";
+//const serverUrl = "http://localhost:8080/ebazar-back";
+const serverUrl = "http://localhost:80/ebazar-back";
 const loginPage = "login.html";
 //const serverUrl = "https://ebazarmex.000webhostapp.com";
 
