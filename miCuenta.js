@@ -19,6 +19,7 @@ function getInformation()
     var data = JSON.parse(xhttp.responseText);
 
     let html = '';
+    let html_img ='';
 
     if (data.success === true)
     {
@@ -55,10 +56,16 @@ function getInformation()
                    <div class="campoRedondo color-contCampo barra text-white font-size-1">${usuario.email}</div>
                 </div>
                 `;
+
+                html_img += ` 
+                    <div class="flex" id="foto" style="background-image: url('https://picsum.photos/310/400');">
+                    </div>
+                `;
         
         });
         
         document.getElementById('info').innerHTML = html;
+        document.getElementById('zona_img').innerHTML = html_img;
     }
     else{
         alert(data.messages);

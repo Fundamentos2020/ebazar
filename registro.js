@@ -1,4 +1,4 @@
-const btn_registro = document.getElementById("continuar");
+/*const btn_registro = document.getElementById("continuar");
 
 eventListener();
 
@@ -6,11 +6,10 @@ function eventListener()
 {
     btn_registro.addEventListener('click',registrarse);
 }
+]*/
 
-function registrarse(e)
+function registrarse()
 {
-    e.preventDefault();
-
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", api + "usuarios", false);
     xhttp.setRequestHeader("Content-Type", "application/json");
@@ -29,7 +28,7 @@ function registrarse(e)
             alert(data.messages);
         }
     };*/
-
+    var foto_usuario = document.getElementById('img_prof').value;
     var num_telefono = document.getElementById('num_telefono').value;
     var domicilio = document.getElementById('domicilio').value;
     var nombre = document.getElementById('nombre').value;
@@ -41,7 +40,7 @@ function registrarse(e)
     var tipo_usuarioSeleccionado = tipo_usuario.options[tipo_usuario.selectedIndex].value;
 
     var json = { "num_telefono": num_telefono, "domicilio": domicilio, "nombre": nombre, "nombre_usuario": nombre_usuario, 
-    "email":email, "contrasena": contrasena, "tipo_usuario": tipo_usuarioSeleccionado};
+    "foto_usuario": foto_usuario ,"email":email, "contrasena": contrasena, "tipo_usuario": tipo_usuarioSeleccionado};
     var json_string = JSON.stringify(json);
     
     xhttp.send(json_string);

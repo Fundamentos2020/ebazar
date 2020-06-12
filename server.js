@@ -60,14 +60,31 @@ function menu()
        <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
        <li onclick="window.location.href = 'login.html'">Iniciar Sesión</li>`
     }
-    else{
-        htmlMenu = `
-       <li onclick="window.location.href = 'inicio.html'">Inicio</li>
-       <li onclick="window.location.href = 'catProductos.html'">Productos</li>
-       <li onclick="window.location.href = 'misProductos.html'">Vender</li>
-       <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
-       <li onclick="window.location.href = 'miCuenta.html'">Mi Cuenta</li>
-       <li onclick="logOut()">Log Out</li>`;
+    else
+    {
+        switch(session.tipo_usuario)
+        {
+            case 1:  htmlMenu = `
+                    <li onclick="window.location.href = 'inicio.html'">Inicio</li>
+                    <li onclick="window.location.href = 'catProductos.html'">Productos</li>
+                    <li onclick="window.location.href = 'misProductos.html'">Vender</li>
+                    <li onclick="window.location.href = 'miCuenta.html'">Mi Cuenta</li>
+                    <li onclick="logOut()">Log Out</li>`;
+                break;
+            case 2: htmlMenu = `
+                    <li onclick="window.location.href = 'inicio.html'">Inicio</li>
+                    <li onclick="window.location.href = 'catProductos.html'">Productos</li>
+                    <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
+                    <li onclick="window.location.href = 'miCuenta.html'">Mi Cuenta</li>
+                    <li onclick="logOut()">Log Out</li>`;
+                break;
+            case 3: htmlMenu = `
+                <li onclick="window.location.href = 'inicio.html'">Inicio</li>
+                <li onclick="window.location.href = 'catProductos.html'">Productos</li>
+                <li onclick="window.location.href = 'miCuenta.html'">Mi Cuenta</li>
+                <li onclick="logOut()">Log Out</li>`;
+                break;
+        }
     }
     
     document.getElementById('zonaMenu').innerHTML = htmlMenu;
@@ -77,7 +94,7 @@ function logOut()
 {
     var sesion = getSesion();
 
-    if ((sesion != null) && Number.isInteger(sesion.id_sesion)) 
+    if ((sesion != null)// && Number.isInteger(sesion.id_sesion)) 
     {    
         var xhttp = new XMLHttpRequest();
 
@@ -91,8 +108,8 @@ function logOut()
             if (data.success === true)
             {
                     localStorage.removeItem("lusuarios_sesion",JSON.stringify(data.data));
-                    //window.location.href = client;// + "inicio.html";
-                    window.location.href = client + "inicio.html";
+                    window.location.href = client;// + "inicio.html";
+                    //window.location.href = client + "inicio.html";
 
             }
             else 
