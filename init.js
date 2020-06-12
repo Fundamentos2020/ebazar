@@ -60,7 +60,7 @@ function getLoMasVendido()
 
 function getOfertas()
 {
-    var i = Math.floor(Math.random() * 4) + 1;  // returns a random integer from 1 to 10
+    var i = Math.floor(Math.random() * 4) + 1;  // returns a random integer from 1 to 4
     let titulo;
 
     switch(i)
