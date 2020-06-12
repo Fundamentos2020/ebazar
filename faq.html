@@ -58,7 +58,7 @@
             <div class="col-m-12 col-s-12 contendor_carrito">
                 <div class="faq_titulo">FAQ</div>
                 <div class="contendor_pregutas" id="contenido">
-                    <button class="accordion">Pregunta 1</button>
+                    <!--<button class="accordion">Pregunta 1</button>
                     <div class="panel">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores quod facilis eos eum? Molestiae provident magni pariatur exercitationem blanditiis.
                         
@@ -83,7 +83,7 @@
                     <button class="accordion" onclick="despliega()">Pregunta 5</button>
                     <div class="panel">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores quod facilis eos eum? Molestiae provident magni pariatur exercitationem blanditiis.</p>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -114,41 +114,11 @@
             });
         }      
 
-        var xhttp = new XMLHttpRequest();
-
-    xhttp.open("GET", api + "faq", true);
-
-    xhttp.onload = function() {
-        if (this.status == 200) {
-            let html ="";
-            var data = JSON.parse(this.responseText);
-
-            if (data.success == true) 
-            {
-                let preguntas = data.data.preguntas;
-                preguntas.forEach(pregunta => {
-                html += 
-                    `<button class="accordion">${pregunta.titulo}</button>
-                    <div class="panel">
-                    <p>${pregunta.descripcion}</p>
-                    </div>`;
-                 });
-                
-                 document.getElementById('contenido').innerHTML = html;
-
-            }
-        }
-        else {
-            var data = JSON.parse(this.responseText);
-
-            alert(data.messages);
-        }
-    }
-    xhttp.send();
+    
     </script>
 
    
-    <footer style="margin-top: 6em;">
+    <footer style="margin-top: 3em;">
         <div class = "text-center color-3">
             <div style="padding: 1em;">
                 <a href="faq.html" style="color: white; padding: 0em 1em;">FAQ</a>
