@@ -70,7 +70,7 @@ function cargar()
 {
     var session = getSesion();
     {
-        if (session.tipo_usuario !== 3)
+        if (session.tipo_usuario !== 3 || session === null)
         {
             alert("¡No tienes los permisos necesarios para estar aquí!");
             window.location.href = "inicio.html";

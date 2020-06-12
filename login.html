@@ -8,7 +8,7 @@
     
     <title>Log In</title>
 </head>
-<body class="m-0">
+<body class="m-0" onload="menu()">
     <!----Sección del encabezado de la página--->
     <div class="row color-Banner text-white">
         <div class="col-m-8 col-s-4 p-1 font-Header e-titulo">
@@ -23,7 +23,7 @@
                         <input id="i_b" type="text" placeholder="Ej. Monitores gamers" class="search2">  
                     </div>
                     <div class="col-m-2 col-s-1 search_icon" onclick="if(document.getElementById('i_b').value != '') { window.location.href = `buscar.html?titulo=${document.getElementById('i_b').value}`; }">
-                        <img class="img_search" align="middle" src="search.png" alt="" srcset="">
+                        <img class="img_search" src="search.png" alt="" srcset="">
                     </div>
                 </div>
             </div>                
@@ -35,18 +35,13 @@
         <label for="btn-menu" ><img src="menu.png" class = "img-menu"></label>
 
         <div class="menuV2 ">
-            <ul class="font-menu">
-                <li onclick="window.location.href = 'inicio.html'">Inicio</li>
-                <li onclick="window.location.href = 'catProductos.html'">Productos</li>
-                <li onclick="window.location.href = 'misProductos.html'">Vender</li>
-                <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
-                <li onclick="window.location.href = 'login.html'">Iniciar Sesión</li>
+            <ul class="font-menu" id = "zonaMenu">
             </ul>
         </div>
     <div>
 
-    <form class="row color-Banner hg">
-        <div class="col-m-4 col-s-12 m-contenedor borde-0 color-blancoF">
+    <form class="row color-Banner ">
+        <div class="col-m-4 col-s-12 m-contenedor borde-0 color-blancoF" style="margin-top: 15em;">
             <h2 class="p-1">Log in</h2>
             <div class="mb-4 p-1">
                 <span>Username:</span>
@@ -62,7 +57,7 @@
         </div>
     </form>
 
-    <div class="text-center color-Banner h">
+    <div class="text-center color-Banner">
         <div class = "text-center color-3">
             <div style="padding: 1em;">
                 <a href="faq.html" style="color: white; padding: 0em 1em;">FAQ</a>
