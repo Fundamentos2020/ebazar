@@ -17,7 +17,7 @@ function cargaUsuarios()
 
         usuarios['usuarios'].forEach(usuario => {
                 html+=  ` 
-                <div class="font-campos p-2 text-bold">
+                <div class="font-campos p-2 text-bold bb">
                     Username
                     <div class="campoRedondo color-contCampo barra text-white font-size-1">${usuario.nombre_usuario}</div>
                 </div>

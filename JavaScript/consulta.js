@@ -69,6 +69,7 @@ function menu()
                     <li onclick="window.location.href = 'inicio.html'">Inicio</li>
                     <li onclick="window.location.href = 'catProductos.html'">Productos</li>
                     <li onclick="window.location.href = 'misProductos.html'">Vender</li>
+                    <li onclick="window.location.href = 'Carrito.html'">Carrito</li>
                     <li onclick="window.location.href = 'miCuenta.html'">Mi Cuenta</li>
                     <li onclick="logOut()">Log Out</li>`;
                 break;
@@ -109,6 +110,11 @@ function logOut()
             if (data.success === true)
             {
                     localStorage.removeItem("lusuarios_sesion",JSON.stringify(data.data));
+                    localStorage.removeItem('carrito', JSON.stringify({
+                        productos: [],
+                        envio: 50
+                    }))
+
                     window.location.href = client + "inicio.html";
             }
             else 

@@ -94,6 +94,8 @@ body {
     height: 100%;
 }
 
+.bb{border-bottom: solid 1px lightgray;}
+
 .wrapper {
     min-height: calc(100% - 4rem);
 }

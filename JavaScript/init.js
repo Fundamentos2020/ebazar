@@ -70,6 +70,7 @@ function getOfertas()
         case 2: titulo = "Electrodomesticos";
             break;
         case 3: titulo = "Audio";
+                i = 4;
             break;
         case 4: titulo = "Audio";
             break;

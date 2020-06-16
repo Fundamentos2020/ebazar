@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="miCuenta.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/miCuenta.css" type="text/css">
     
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
 </head>
     <body class="m-0" onload="cargar()">
 
-        <script src="miCuenta.js"></script>
-        <script src="consulta.js"></script>
+        <script src="../JavaScript/miCuenta.js"></script>
+        <script src="../JavaScript/consulta.js"></script>
 
         <!----Sección del encabezado de la página--->
         <div class="row color-Search">
@@ -68,7 +68,8 @@
                                 <br>
                                 <input type="file" name = "profile" accept ="image/*" id="img_prof" style="width:11em; margin-top: 0.5em;" class="botonRedondo color-Search font-campos">               
                             </div>
-                            
+                            <br>
+                            <button  class="botonRedondo color-Search font-campos" onclick="window.location.href = 'compras.html'"> Historial de Compras</button>
                         </div>
 
                         <!--Datos del Usuario-->
